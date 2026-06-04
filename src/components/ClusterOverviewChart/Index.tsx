@@ -460,8 +460,8 @@ export default function Index() {
             <div className="grid grid-cols-6 h-[70px] items-center border-b border-gray-200 bg-gray-100 px-2 text-[10px] font-bold text-gray-700 sticky top-0 z-30 sm:px-4 sm:text-[12px]">
               <div>Project / Cluster</div>
               <div>No of Units</div>
-              <div>Marketing Launch Ends</div>
-              <div>Booking Launch Ends</div>
+              <div>Marketing Launch Dates</div>
+              <div>Booking Launch Dates</div>
               <div>No of Units Sold</div>
               <div>Price in AED</div>
             </div>
