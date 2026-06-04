@@ -3,7 +3,7 @@ export type Task = {
     name: string;
     startDate: string;
     endDate: string;
-    // progress: number | string | undefined;
+    progress: number;
     updatedBy: string;
     status: 'completed' | 'inprogress' | 'notstarted' | 'delay';
     lastUpdated: string;
