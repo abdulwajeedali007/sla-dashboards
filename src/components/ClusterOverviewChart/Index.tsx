@@ -255,20 +255,20 @@ const timelineTasks: Project[] = [
     ],
   },
 ];
-const ROW_HEIGHT = 56;
+// const ROW_HEIGHT = 56;
 
 export default function Index() {
-  const visibleTasks = useMemo(() => {
-    return timelineTasks.flatMap((project) =>
-      project.clusters.flatMap((cluster) =>
-        cluster.phases.map((phase) => ({
-          ...phase,
-          projectName: project.projectName,
-          cluster: cluster.cluster,
-        })),
-      ),
-    );
-  }, []);
+  // const visibleTasks = useMemo(() => {
+  //   return timelineTasks.flatMap((project) =>
+  //     project.clusters.flatMap((cluster) =>
+  //       cluster.phases.map((phase) => ({
+  //         ...phase,
+  //         projectName: project.projectName,
+  //         cluster: cluster.cluster,
+  //       })),
+  //     ),
+  //   );
+  // }, []);
 
   // One row per cluster
   const clusterRows = useMemo(() => {

@@ -8,7 +8,13 @@ export type Task = {
     status: 'completed' | 'inprogress' | 'notstarted' | 'delay';
     lastUpdated: string;
     completed: number;
-    
+    inprogress: number;
+    atrisk: number,
+    delayed: number,
+    pending: number,
+    notstarted: number,
+    autocomplete: number,
+
   };
   
   export type Milestone = {
