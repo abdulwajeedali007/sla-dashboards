@@ -9,6 +9,14 @@ export const tasksProgress: Task[] = [
     status: 'completed',
     updatedBy: 'Kautuk Shet',
     lastUpdated: '2026-05-05',
+
+    completed: 10,
+    inprogress: 0,
+    atrisk: 0,
+    delayed: 0,
+    pending: 0,
+    notstarted: 0,
+    autocomplete: 5,
   },
   {
     id: 2,
@@ -19,6 +27,14 @@ export const tasksProgress: Task[] = [
     status: 'inprogress',
     updatedBy: 'Muthyala Srujan',
     lastUpdated: '2026-05-07',
+
+    completed: 2,
+    inprogress: 8,
+    atrisk: 2,
+    delayed: 0,
+    pending: 1,
+    notstarted: 0,
+    autocomplete: 0,
   },
   {
     id: 3,
@@ -29,16 +45,32 @@ export const tasksProgress: Task[] = [
     status: 'delay',
     updatedBy: 'Rajesh',
     lastUpdated: '2026-08-12',
+
+    completed: 1,
+    inprogress: 2,
+    atrisk: 6,
+    delayed: 3,
+    pending: 3,
+    notstarted: 1,
+    autocomplete: 0,
   },
   {
     id: 4,
-    name: 'Technical DesignHOD Approve F&A',
+    name: 'Technical Design HOD Approve F&A',
     startDate: '2026-05-06',
     endDate: '2026-08-15',
     progress: 40,
     status: 'inprogress',
     updatedBy: 'Raviteja Dhanukonda',
     lastUpdated: '2026-05-09',
+
+    completed: 2,
+    inprogress: 5,
+    delayed: 0,
+    atrisk: 1,
+    pending: 2,
+    notstarted: 0,
+    autocomplete: 0,
   },
   {
     id: 5,
@@ -49,6 +81,14 @@ export const tasksProgress: Task[] = [
     status: 'notstarted',
     updatedBy: '',
     lastUpdated: '2026-05-10',
+
+    completed: 0,
+    inprogress: 0,
+    atrisk: 0,
+    delayed: 2,
+    pending: 10,
+    notstarted: 12,
+    autocomplete: 0,
   },
 ];
 

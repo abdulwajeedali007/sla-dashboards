@@ -18,6 +18,10 @@ function Index() {
         <NavLink to="/cluster-execution" className={navClass}>
           Cluster Execuation
         </NavLink>
+        /{' '}
+        <NavLink to="/sla-readiness" className={navClass}>
+          Sla Readiness
+        </NavLink>
       </nav>
 
       <div className="container mx-auto px-3 md:px-0">

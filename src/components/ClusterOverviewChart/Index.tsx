@@ -442,7 +442,7 @@ export default function Index() {
 
   return (
     <>
-      <div className="flex mb-6 gap-5 justify-center">
+      {/* <div className="flex mb-6 gap-5 justify-center">
         <div className="flex gap-2 items-center">
           <span className="w-10 h-3 bg-yellow-600 rounded"></span>
           <p className="text-base">Marketing Launch</p>
@@ -451,11 +451,11 @@ export default function Index() {
           <span className="w-10 h-3 bg-green-800 rounded"></span>
           <p className="text-base">Booking Launch</p>
         </div>
-      </div>
+      </div> */}
       <div className="rounded border border-gray-200 bg-white shadow-sm overflow-x-auto">
-        <div className="flex min-w-[1400px] md:grid md:grid-cols-12">
+        <div className="flex min-w-[1400px] grid grid-cols-12">
           {/* LEFT TABLE */}
-          <div className="border-r border-gray-200 bg-white md:col-span-6">
+          <div className="border-r border-gray-200 bg-white col-span-12">
             {/* HEADER */}
             <div className="grid grid-cols-6 h-[70px] items-center border-b border-gray-200 bg-gray-100 px-2 text-[10px] font-bold text-gray-700 sticky top-0 z-30 sm:px-4 sm:text-[12px]">
               <div>Project / Cluster</div>
@@ -512,7 +512,7 @@ export default function Index() {
           </div>
 
           {/* RIGHT TIMELINE */}
-          <div className="w-full bg-white md:col-span-6">
+          {/* <div className="w-full bg-white md:col-span-6">
             <div
               style={{
                 height: chartHeight + 110,
@@ -524,7 +524,7 @@ export default function Index() {
                 plugins={[xAxisBackgroundPlugin]}
               />
             </div>
-          </div>
+          </div> */}
         </div>
       </div>
     </>
