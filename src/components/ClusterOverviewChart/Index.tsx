@@ -8,7 +8,7 @@ import {
   Legend,
   TimeScale,
 } from 'chart.js';
-import { Bar } from 'react-chartjs-2';
+// import { Bar } from 'react-chartjs-2';
 import 'chartjs-adapter-date-fns';
 import { format } from 'date-fns';
 
@@ -301,144 +301,144 @@ export default function Index() {
     );
   }, []);
 
-  const chartHeight = clusterRows.length * ROW_HEIGHT;
+  // const chartHeight = clusterRows.length * ROW_HEIGHT;
 
-  const xAxisBackgroundPlugin = {
-    id: 'xAxisBackground',
+  // const xAxisBackgroundPlugin = {
+  //   id: 'xAxisBackground',
 
-    beforeDraw(chart: any) {
-      const { ctx, chartArea, scales } = chart;
-      const xAxis = scales.x;
+  //   beforeDraw(chart: any) {
+  //     const { ctx, chartArea, scales } = chart;
+  //     const xAxis = scales.x;
 
-      ctx.save();
+  //     ctx.save();
 
-      // draw background under x-axis ticks
-      ctx.fillStyle = '#f3f4f6';
+  //     // draw background under x-axis ticks
+  //     ctx.fillStyle = '#f3f4f6';
 
-      ctx.fillRect(
-        chartArea.left,
-        xAxis.top,
-        chartArea.right - chartArea.left,
-        xAxis.height,
-      );
+  //     ctx.fillRect(
+  //       chartArea.left,
+  //       xAxis.top,
+  //       chartArea.right - chartArea.left,
+  //       xAxis.height,
+  //     );
 
-      ctx.restore();
-    },
-  };
+  //     ctx.restore();
+  //   },
+  // };
 
-  const data = {
-    datasets: [
-      {
-        label: 'Timeline',
+  // const data = {
+  //   datasets: [
+  //     {
+  //       label: 'Timeline',
 
-        data: visibleTasks.map((task: any) => ({
-          x: [new Date(task.startDate), new Date(task.endDate)],
+  //       data: visibleTasks.map((task: any) => ({
+  //         x: [new Date(task.startDate), new Date(task.endDate)],
 
-          // SAME CLUSTER ROW
-          y: `${task.projectName}__${task.cluster}`,
+  //         // SAME CLUSTER ROW
+  //         y: `${task.projectName}__${task.cluster}`,
 
-          phase: task.phase,
-          statusDate: task.statusDate,
-        })),
+  //         phase: task.phase,
+  //         statusDate: task.statusDate,
+  //       })),
 
-        backgroundColor: visibleTasks.map((task: any) =>
-          task.phase.toLowerCase().includes('booking') ? '#166534' : '#ffc038',
-        ),
+  //       backgroundColor: visibleTasks.map((task: any) =>
+  //         task.phase.toLowerCase().includes('booking') ? '#166534' : '#ffc038',
+  //       ),
 
-        borderRadius: 8,
-        borderSkipped: false,
-        barThickness: 12,
+  //       borderRadius: 8,
+  //       borderSkipped: false,
+  //       barThickness: 12,
 
-        grouped: false,
+  //       grouped: false,
 
-        categoryPercentage: 1,
-      },
-    ],
-  };
+  //       categoryPercentage: 1,
+  //     },
+  //   ],
+  // };
 
-  const options: any = {
-    indexAxis: 'y',
-    responsive: true,
-    maintainAspectRatio: false,
-    animation: false,
+  // const options: any = {
+  //   indexAxis: 'y',
+  //   responsive: true,
+  //   maintainAspectRatio: false,
+  //   animation: false,
 
-    plugins: {
-      legend: {
-        display: false,
-      },
+  //   plugins: {
+  //     legend: {
+  //       display: false,
+  //     },
 
-      tooltip: {
-        callbacks: {
-          label(context: any) {
-            const raw = context.raw;
+  //     tooltip: {
+  //       callbacks: {
+  //         label(context: any) {
+  //           const raw = context.raw;
 
-            return `${raw.phase}: ${format(raw.x[0], 'dd MMM yyyy')} → ${format(
-              raw.x[1],
-              'dd MMM yyyy',
-            )}`;
-          },
-        },
-      },
-    },
+  //           return `${raw.phase}: ${format(raw.x[0], 'dd MMM yyyy')} → ${format(
+  //             raw.x[1],
+  //             'dd MMM yyyy',
+  //           )}`;
+  //         },
+  //       },
+  //     },
+  //   },
 
-    scales: {
-      y: {
-        display: true,
+  //   scales: {
+  //     y: {
+  //       display: true,
 
-        offset: true,
+  //       offset: true,
 
-        grid: {
-          display: true,
-          drawBorder: true,
-          // offset: false,
-        },
-        ticks: {
-          display: false, // hide y-axis text
-        },
+  //       grid: {
+  //         display: true,
+  //         drawBorder: true,
+  //         // offset: false,
+  //       },
+  //       ticks: {
+  //         display: false, // hide y-axis text
+  //       },
 
-        border: {
-          display: false,
-        },
-      },
+  //       border: {
+  //         display: false,
+  //       },
+  //     },
 
-      x: {
-        type: 'time',
-        position: 'top',
-        offset: true,
-        min: '2026-01-01',
-        max: '2026-08-01',
+  //     x: {
+  //       type: 'time',
+  //       position: 'top',
+  //       offset: true,
+  //       min: '2026-01-01',
+  //       max: '2026-08-01',
 
-        time: {
-          unit: 'month',
-        },
+  //       time: {
+  //         unit: 'month',
+  //       },
 
-        ticks: {
-          padding: 24,
+  //       ticks: {
+  //         padding: 24,
 
-          callback(value: any) {
-            const date = new Date(value);
+  //         callback(value: any) {
+  //           const date = new Date(value);
 
-            return [
-              // format(date, 'dd'),
-              format(date, 'MMM'),
-              format(date, 'yy'),
-            ].join('-');
-          },
+  //           return [
+  //             // format(date, 'dd'),
+  //             format(date, 'MMM'),
+  //             format(date, 'yy'),
+  //           ].join('-');
+  //         },
 
-          color: '#2a2a2a',
-          font: {
-            size: 12,
-            weight: 600,
-            family: 'Poppins',
-          },
-        },
+  //         color: '#2a2a2a',
+  //         font: {
+  //           size: 12,
+  //           weight: 600,
+  //           family: 'Poppins',
+  //         },
+  //       },
 
-        grid: {
-          color: '#e5e7eb',
-        },
-      },
-    },
-  };
+  //       grid: {
+  //         color: '#e5e7eb',
+  //       },
+  //     },
+  //   },
+  // };
 
   return (
     <>

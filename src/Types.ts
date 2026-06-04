@@ -3,10 +3,12 @@ export type Task = {
     name: string;
     startDate: string;
     endDate: string;
-    progress: number;
+    // progress: number | string | undefined;
     updatedBy: string;
     status: 'completed' | 'inprogress' | 'notstarted' | 'delay';
     lastUpdated: string;
+    completed: number;
+    
   };
   
   export type Milestone = {
