@@ -18,29 +18,40 @@ function Index({
   IconBg,
   ValueColor,
   info,
+  // border,
 }: infoBoxTypes) {
   //   let updateValue = typeof value != 'number' ? `AED ${value}B` : value;
   return (
-    <>
-      <div className=" text-left border border-gray-200 rounded p-5 flex gap-4  w-full md:w-[48%] lg:flex-1">
-        <div className="">
+    <div
+      className={`flex-1 flex flex-col gap-6 justify-between text-left rounded-[20px] p-5 bg-white border border-(--border-color)`}
+    >
+      <div className="flex items-center gap-4">
+        <div className="bg-(--page-background) w-fit p-2 rounded-[20px]">
           {Icon && (
             <Icon
-              className={`${IconBg ? 'p-1.5 rounded-3xl' : ''} ${IconColor && IconColor} ${IconBg && IconBg}`}
-              size={40}
-              strokeWidth={1.5}
+              className={`${IconColor && IconColor} ${IconBg && IconBg}`}
+              size={32}
+              strokeWidth={1}
             />
           )}
         </div>
-        <div className="title_value flex flex-col justify-between ">
-          <h4 className={`text-base ${titleColor}`}>{title && title}</h4>
-          <h2 className={`text-2xl font-medium ${ValueColor}`}>
+        <h4 className={`text-base  ${titleColor ?? 'text-(--primary-color)'}`}>
+          {title && title}
+        </h4>
+      </div>
+      <div className="flex justify-between items-end gap-10">
+        <div>
+          <h2
+            className={`text-[36px] font-medium leading-none ${ValueColor ?? 'text-(--primary-color)'}`}
+          >
             {value && value}
           </h2>
-          <p className="text-xs">{info && info}</p>
+          <p className={`text-xs ${info === undefined ? 'hidden' : 'block'}`}>
+            {info && info}
+          </p>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

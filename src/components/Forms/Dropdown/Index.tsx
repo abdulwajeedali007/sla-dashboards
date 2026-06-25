@@ -1,30 +1,20 @@
 import { useState, useRef, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
 
-// const options = [
-//   { label: '2025', value: '2025' },
-//   { label: '2026', value: '2026' },
-//   { label: '2027', value: '2027' },
-// ];
-
 interface dropdownTypes {
   label: string;
-  values?: string[];
-  setSelected: React.Dispatch<
-    React.SetStateAction<{
-      Year: string;
-      ProjectType: string;
-      ClusterType: string;
-    }>
-  >;
-  selected: string;
-  field: string;
+  values?: number[] | string[];
+
+  onSelect: (field: number | string, value: string | number) => void;
+  selected: number | string;
+  field: string | number;
 }
 
-export default function Dropdown({
+export default function Index({
   values,
   label,
-  setSelected,
+  // setSelected,
+  onSelect,
   selected,
   field,
 }: dropdownTypes) {
@@ -45,8 +35,10 @@ export default function Dropdown({
   }, []);
 
   return (
-    <div className="w-80 relative sm:w-60 md:w-40" ref={ref}>
-      <span className="text-base">{label}</span>
+    <div className="w-full relative" ref={ref}>
+      <span className="text-base mb-1 inline-block tracking-wide text-(--primary-color)">
+        {label}
+      </span>
       {/* Button */}
       <div
         onClick={() => setOpen((prev) => !prev)}
@@ -65,16 +57,17 @@ export default function Dropdown({
 
       {/* Dropdown */}
       {open && (
-        <div className="absolute mt-0.5 w-full bg-white border border-gray-300 rounded-md shadow-lg z-10 overflow-hidden">
+        <div className="absolute mt-0.5 w-full bg-white border border-gray-300 rounded-md shadow-lg z-20 overflow-hidden">
           {values &&
             values.map((value) => (
               <div
                 key={value}
                 onClick={() => {
-                  setSelected((prev) => ({ ...prev, [field]: value }));
+                  // setSelected((prev) => ({ ...prev, [field]: value }));
+                  onSelect(field, value);
                   setOpen(false);
                 }}
-                className="px-4 py-3 text-base hover:bg-gray-100 cursor-pointer"
+                className="px-4 py-3 text-base border-b border-gray-100 hover:bg-gray-100 cursor-pointer"
               >
                 {value}
               </div>

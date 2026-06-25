@@ -1,59 +1,83 @@
-import type { Task } from '../../Types';
-import TableRow from '../TableRow/Index';
-
+import { useState } from 'react';
+import type { SingleDepartmentType } from '../../Types';
+import TableRow from './TableRow/Index';
+import { useDispatch } from 'react-redux';
+import type { AppDispatch } from '../../store';
+import { fetchdepartmentwiseDrilldown } from '../../store/DepartmentWiseSLADrillDownSlice';
+import { fetchoveralldepartmentwiseDrilldown } from '../../store/OverallDepartmentWiseSLADrillDownSlice';
 type Props = {
-  tasks: Task[];
+  tasks: SingleDepartmentType[];
+  departmentDetails: any;
 };
 
-const Index = ({ tasks }: Props) => {
-  return (
-    <div className="w-full overflow-x-auto rounded-lg shadow mt-5">
-      <h2 className="text-xl mb-3 font-semibold px-2 py-1">
-        Department Readiness
-      </h2>
-      <table className="w-full border-collapse">
-        {/* Header */}
-        <thead className="bg-gray-100 text-left">
-          <tr>
-            <th className="px-2 font-semibold text-xs py-4">#</th>
-            <th className="px-2 font-semibold text-xs py-4">Department</th>
-            <th className="px-2 font-semibold text-xs py-4 text-green-500">
-              Completed
-            </th>
-            <th className="px-2 font-semibold text-xs py-4 text-yellow-500">
-              in Progress
-            </th>
-            <th className="px-2 font-semibold text-xs py-4 text-yellow-700">
-              Delayed
-            </th>
-            <th className="px-2 font-semibold text-xs py-4 text-purple-500">
-              Pending
-            </th>
-            <th className="px-2 font-semibold text-xs py-4 text-red-500">
-              At Risk
-            </th>
-            <th className="px-2 font-semibold text-xs py-4 text-gray-500">
-              not Started
-            </th>
-            <th className="px-2 font-semibold text-xs py-4 text-blue-500">
-              Auto Complete
-            </th>
-            <th className="px-2 font-semibold text-xs py-4">Progress</th>
-            <th className="px-2 font-semibold text-xs py-4">Created Date</th>
-            <th className="px-2 font-semibold text-xs py-4">
-              Lasted Updated Date
-            </th>
-            <th className="px-2 font-semibold text-xs py-4">Updated By</th>
-          </tr>
-        </thead>
+const Index = ({ tasks, departmentDetails }: Props) => {
+  const dispatch = useDispatch<AppDispatch>();
+  const [openDepartment, setOpenDepartment] = useState<string | null>(null);
 
-        {/* Body */}
-        <tbody>
-          {tasks.map((task) => (
-            <TableRow key={task.id} task={task} />
-          ))}
-        </tbody>
-      </table>
+  function handleToggle(id?: string, name?: string) {
+    if (openDepartment === name) {
+      setOpenDepartment(null);
+      return;
+    }
+    setOpenDepartment(name as string);
+    if (id && name) {
+      dispatch(fetchdepartmentwiseDrilldown({ id, name }));
+    } else {
+      dispatch(fetchoveralldepartmentwiseDrilldown(name as string));
+    }
+  }
+  return (
+    <div>
+      <h3 className="text-[22px] tracking-tight capitalize mb-3 sm:mb-3">
+        Department Readiness
+      </h3>
+      <div className="w-full overflow-x-auto rounded-[20px] bg-(--page-background) border border-(--border-color)">
+        <table className="w-full border-collapse">
+          {/* Header */}
+          <thead className="bg-gray-800 text-white text-center h-16">
+            <tr>
+              <th className="px-4 font-normal lg:text-base text-sm py-4 text-left border border-[#f6f3f41a]">
+                Department
+              </th>
+              <th className="px-4 font-normal lg:text-base text-sm py-4 border border-[#f6f3f41a] ">
+                Total Steps
+              </th>
+              <th className="px-4 font-normal lg:text-base text-sm py-4 border border-[#f6f3f41a] ">
+                Completed
+              </th>
+              <th className="px-4 font-normal lg:text-base text-sm py-4 border border-[#f6f3f41a] ">
+                In Progress
+              </th>
+              <th className="px-4 font-normal lg:text-base text-sm py-4 border border-[#f6f3f41a] ">
+                New
+              </th>
+
+              <th className="px-4 font-normal lg:text-base text-sm py-4  border border-[#f6f3f41a] ">
+                SLA Breached
+              </th>
+
+              <th className="px-4 font-normal lg:text-base text-sm py-4  border border-[#f6f3f41a]">
+                SLA Adherence %
+              </th>
+            </tr>
+          </thead>
+
+          {/* Body */}
+          <tbody>
+            {tasks.map((task: SingleDepartmentType) => {
+              return (
+                <TableRow
+                  key={task.DepartmentName}
+                  task={task}
+                  isOpen={openDepartment === task.DepartmentName}
+                  onToggle={handleToggle}
+                  departmentDetails={departmentDetails}
+                />
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 };
