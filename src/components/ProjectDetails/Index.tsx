@@ -15,7 +15,7 @@ function Index() {
         <div className="flex  lg:flex-col lg:border-r-2 border-gray-200 lg:justify-center  lg:mb-0  mb-3 items-center flex-1">
           <div className=" flex  lg:flex-col flex-row justify-between lg:text-left lg:w-auto w-full">
             <p className="font-base text-gray-400">Country</p>
-            <h3 className="font-semibold lg:tracking-wide">Dubai</h3>
+            <h3 className="font-semibold lg:tracking-wide">United Arab Emirates</h3>
           </div>
         </div>
         <div className="flex lg:flex-col flex-row lg:border-r-2 border-gray-200  lg:justify-center justify-between lg:mb-0 mb-3 items-center flex-1">
