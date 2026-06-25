@@ -56,7 +56,7 @@ function Index() {
           value={Number(departmentWiseTableData.length)}
           IconColor="text-black"
           // IconBg="bg-black"
-          info={'active'}
+          info={'active departments'}
           // colSpan={2}
         />
         <InfoBlock
@@ -65,7 +65,7 @@ function Index() {
           value={overallResultStatus.overallSteps}
           IconColor="text-blue-700"
           // IconBg="bg-blue-700"
-          info="active departments"
+          info="active steps"
           // colSpan={2}
         />
         <InfoBlock
