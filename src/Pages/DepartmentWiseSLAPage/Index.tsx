@@ -80,7 +80,7 @@ function Index() {
         />
         <InfoBlock
           Icon={Clock7}
-          title="In Progess"
+          title="In Progress"
           value={overallResultStatus['In progress']}
           IconColor="text-[#f59e0b]"
           // IconBg="bg-yellow-500"
