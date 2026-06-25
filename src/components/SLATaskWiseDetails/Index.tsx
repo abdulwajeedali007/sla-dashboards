@@ -19,7 +19,7 @@ function Index({
         <thead className="bg-gray-700 h-10 text-white text-[12px] font-extralight  ">
           <tr>
             <th className="text-left px-4">Task Name</th>
-            {taskID && <th>CaseID</th>}
+            {taskID && <th>Case ID</th>}
             <th>Start Date</th>
             <th>End Date</th>
             <th>Last Updated By</th>
