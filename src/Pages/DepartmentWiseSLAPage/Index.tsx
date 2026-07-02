@@ -2,7 +2,6 @@ import {
   CircleCheckBig,
   ClipboardList,
   Clock7,
-  // Info,
   Tags,
   TriangleAlert,
   User2Icon,
@@ -11,6 +10,7 @@ import {
 import TableSalesTracker from '../../components/TableSalesTracker/Index';
 import InfoBlock from '../../components/InfoBlock/Index';
 import ProjectDetails from '../../components/ProjectDetails/Index';
+import Loader from '../../components/Loader/Index';
 import Title from '../../components/Title/Index';
 
 import { useDispatch, useSelector } from 'react-redux';
@@ -38,11 +38,7 @@ function Index() {
   }, []);
 
   if (loading) {
-    return (
-      <p className="flex h-screen justify-center items-center text-[28px] text-(--primary-color) font-extralight tracking-widest">
-        LOADING
-      </p>
-    );
+    return <Loader />;
   }
   return (
     <div className="my-9">
@@ -55,48 +51,35 @@ function Index() {
           ValueColor="text-black"
           value={Number(departmentWiseTableData.length)}
           IconColor="text-black"
-          // IconBg="bg-black"
           info={'active departments'}
-          // colSpan={2}
         />
         <InfoBlock
           Icon={ClipboardList}
           title="Total Steps"
           value={overallResultStatus.overallSteps}
           IconColor="text-blue-700"
-          // IconBg="bg-blue-700"
           info="active steps"
-          // colSpan={2}
         />
         <InfoBlock
           Icon={CircleCheckBig}
           title="Completed"
           value={overallResultStatus.Completed}
           IconColor="text-green-700"
-          // IconBg="bg-green-700"
           info={'Steps'}
-          // ValueColor="text-green-700"
-          // colSpan={2}
         />
         <InfoBlock
           Icon={Clock7}
           title="In Progress"
           value={overallResultStatus['In progress']}
           IconColor="text-[#f59e0b]"
-          // IconBg="bg-yellow-500"
-          // ValueColor="text-[#f59e0b]"
           info={'Steps'}
-          // colSpan={2}
         />
         <InfoBlock
           Icon={User2Icon}
           title="New"
           value={overallResultStatus.New}
           IconColor="text-gray-700"
-          // IconBg="bg-gray-700"
           info={'Steps'}
-          // ValueColor="text-gray-700"
-          // colSpan={2}
         />
 
         <InfoBlock

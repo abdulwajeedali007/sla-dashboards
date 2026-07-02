@@ -5,6 +5,7 @@ import { fetchcalenderLaunch } from '../../store/ClusterCalenderLaunchSlice';
 import Timeline from '../../components/Timeline/Index';
 import InfoBlock from '../../components/InfoBlock/Index';
 import FormFilter from '../../components/Forms/Index';
+import Loader from '../../components/Loader/Index';
 import Title from '../../components/Title/Index';
 
 import {
@@ -65,49 +66,36 @@ function Index() {
   }, []);
 
   if (loading) {
-    return (
-      <p className="flex h-screen justify-center items-center text-[28px] text-(--primary-color) font-extralight tracking-widest">
-        LOADING
-      </p>
-    );
+    return <Loader />;
   }
 
   return (
     <div className="my-9">
       <Title heading={'Cluster launch calender'} />
       <div className="mb-9 flex gap-6 flex-col lg:flex-row">
-        {/* <div className="col-span-3"></div> */}
         <InfoBlock
           Icon={Globe}
           title="Overall Clusters Getting Launched"
           value={42}
           IconColor="text-[#8e2157]"
-          // border
-          // colSpan={3}
         />
         <InfoBlock
           Icon={CalculatorIcon}
           title={'Upcoming Launches'}
           value={23}
           IconColor="text-blue-700"
-          // border
-          // colSpan={3}
         />
         <InfoBlock
           Icon={CheckSquare}
           title="Ready To Accept Bookings"
           value={10}
           IconColor="text-green-700"
-          // border
-          // colSpan={3}
         />
         <InfoBlock
           Icon={TriangleAlert}
           title="Delayed Clusters"
           value={2}
           IconColor="text-red-700"
-          // border
-          // colSpan={3}
         />
       </div>
       <div className="bg-white rounded-[20px] lg:p-6 p-3 border border-(--border-color)">
