@@ -1,19 +1,21 @@
 import { Routes, Route, Navigate } from 'react-router';
 
-import Layout from './Layout/Index';
+import ContainerLayout from './Layout/ContainerLayout';
+import FullWidthLayout from './Layout/FullWidthLayout';
 
 import ClusterLaunchCalenderPage from './Pages/ClusterLaunchCalenderPage/Index';
 import ClusterOverviewPage from './Pages/ClusterOverviewPage/Index';
 import TaskWiseDetailsPage from './Pages/TaskWiseDetailsPage/Index';
 import DepartmentWiseSLAPage from './Pages/DepartmentWiseSLAPage/Index';
 import OverallDepartmentWiseSLAPage from './Pages/OverallDepartmentWiseSLAPage/Index';
+import ControlRoomPage from './Pages/ControlRoomPage/Index';
 
 function App() {
   return (
     <Routes>
-      <Route element={<Layout />}>
+      {/* Container Pages */}
+      <Route element={<ContainerLayout />}>
         <Route
-          index
           path="/cluster-launch-calender"
           element={<ClusterLaunchCalenderPage />}
         />
@@ -24,20 +26,28 @@ function App() {
           path="/task-wise-details/:id"
           element={<TaskWiseDetailsPage />}
         />
+
         <Route
           path="/department-wise-sla"
           element={<DepartmentWiseSLAPage />}
         />
+
         <Route
           path="/overall-department-wise-sla"
           element={<OverallDepartmentWiseSLAPage />}
         />
-        {/* Default Route */}
-        <Route
-          path="*"
-          element={<Navigate to="/cluster-launch-calender" replace />}
-        />
       </Route>
+
+      {/* Full Width Pages */}
+      <Route element={<FullWidthLayout />}>
+        <Route path="/control-room" element={<ControlRoomPage />} />
+      </Route>
+
+      {/* Default Route */}
+      <Route
+        path="*"
+        element={<Navigate to="/cluster-launch-calender" replace />}
+      />
     </Routes>
   );
 }
