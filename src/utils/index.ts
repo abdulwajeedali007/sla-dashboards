@@ -6,13 +6,18 @@ import type {
   SingleDepartmentTypeApi,
   SlaTask,
 } from '../Types';
-export function mileStone(data: SlaTask[], mileStoneName: string) {
+export function mileStone(
+  data: SlaTask[],
+  mileStoneName: string,
+  status: string,
+) {
   const readinessMileStonesData =
     data &&
     data
       .filter((milestone) => {
         return (
           milestone.Milestones !== undefined &&
+          // milestone.TaskStatus === status &&
           milestone.Milestones.toLowerCase() === mileStoneName.toLowerCase()
         );
       })
@@ -37,7 +42,11 @@ export function mileStone(data: SlaTask[], mileStoneName: string) {
     ((lengthOfCompletedMileStones / lengthOfTotalMileStone) * 100).toFixed(2),
   );
 
-  return { readinessMileStonesData, percentageOfmilesStones, mileStoneName };
+  const filterMilestones = status
+    ? readinessMileStonesData.filter((item) => item.TaskStatus === status)
+    : readinessMileStonesData;
+
+  return { filterMilestones, percentageOfmilesStones, mileStoneName };
 }
 
 // GET YEARS
