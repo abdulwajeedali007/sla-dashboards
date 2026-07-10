@@ -19,7 +19,7 @@ type CircleNode = Node<{
 
 export default function CircleNodeComponent({ data }: NodeProps<CircleNode>) {
   let Icon = data.Icon;
-  let status = getStatusColorForControlRoom(data && data.status);
+  let status = getStatusColorForControlRoom(data.status?? '');
 
   return (
     <div

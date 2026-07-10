@@ -17,7 +17,7 @@ type CircleNode = Node<{
 
 export default function Index({ data }: NodeProps<CircleNode>) {
   let Icon = data.Icon;
-  let status = getStatusColorForControlRoom(data && data.status);
+  let status = getStatusColorForControlRoom(data.status?? '');
   return (
     <div className={`relative h-35 w-35`}>
       {/* Top Corner */}
