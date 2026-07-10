@@ -93,7 +93,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '1',
-    position: { x: -500, y: 470 },
+    position: { x: -500, y: 495 },
     data: {
       label: 'MDO',
       text: 'Initiate Tracker, Select theCluster ID, Cluster Name &Provide Marketing Name,Launch Date',
@@ -108,7 +108,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '2',
-    position: { x: -200, y: 470 },
+    position: { x: -200, y: 495 },
     data: {
       label: 'DEVELOPMENT & CONCEPT',
       text: 'Uploads F&A ACC and Provide Project Details',
@@ -123,7 +123,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '3',
-    position: { x: 150, y: 462 },
+    position: { x: 140, y: 475 },
     data: {
       label: 'DESIGN & CONCEPT HOD',
       text: 'Approval',
@@ -138,7 +138,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '4',
-    position: { x: 350, y: 462 },
+    position: { x: 350, y: 475 },
     data: {
       label: 'BUDGETING HOD',
       text: 'Approval',
@@ -153,7 +153,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '5',
-    position: { x: 550, y: 462 },
+    position: { x: 550, y: 475 },
     data: {
       label: 'Topology Based',
       text: 'Approval',
@@ -165,7 +165,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '6',
-    position: { x: 900, y: 462 },
+    position: { x: 900, y: 475 },
     data: {
       label: 'Technical Design HOD',
       text: 'Approval',
@@ -307,7 +307,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '17',
-    position: { x: 2260, y: -170 },
+    position: { x: 2260, y: -180 },
     data: {
       label: 'Inventory live in',
       color: 'bg-green-100',
@@ -332,7 +332,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '19',
-    position: { x: 2860, y: -180 },
+    position: { x: 2850, y: -200 },
     data: {
       label: 'CHAIRMAN',
       color: 'bg-green-100',
@@ -386,7 +386,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '23',
-    position: { x: 3340, y: -10 },
+    position: { x: 3330, y: -10 },
     data: {
       label: 'Upload Pricing task Ends',
       color: 'bg-blue-200',
@@ -501,7 +501,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '31',
-    position: { x: 1500, y: 580 },
+    position: { x: 1500, y: 570 },
     data: {
       label: 'CENTRAL PLANNING',
       text: 'Calculate ACD',
@@ -537,7 +537,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '34',
-    position: { x: 2500, y: 600 },
+    position: { x: 2500, y: 570 },
     data: {
       label: 'Upload ACD to PM Web ',
       // text: 'Approval',
@@ -549,7 +549,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '35',
-    position: { x: 3000, y: 600 },
+    position: { x: 3000, y: 570 },
     data: {
       label: 'PEGA validates the PM Web Upload and auto Close the task',
       // text: 'Approval',
