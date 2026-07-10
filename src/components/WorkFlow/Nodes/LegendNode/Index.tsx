@@ -1,7 +1,7 @@
 function Index() {
   return (
     <>
-      <div className="flex justify-start gap-4 items-center mb-4 px-4 text-wrap ">
+      <div className="flex justify-start gap-4 items-center mb-4 px-4">
         <div className="md:flex md:gap-4">
           <div
             className={`group flex items-center gap-3 mb-2 md:w-auto md:mb-0 border  px-3 py-1 rounded-full`}
