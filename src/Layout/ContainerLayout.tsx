@@ -7,7 +7,7 @@ function ContainerLayout() {
     <BaseLayout>
       <div className="container mx-auto">
         <div className="grid grid-cols-12">
-          <div className="col-span-12">
+          <div className="col-span-12 mx-2 lg:mx-0">
             {/* <div
             className="fixed left-4 top-4 cursor-pointer"
             onClick={() => setShow(true)}

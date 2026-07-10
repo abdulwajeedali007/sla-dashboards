@@ -5,7 +5,7 @@ import { Outlet } from 'react-router';
 function FullWidthLayout() {
   return (
     <BaseLayout>
-      <div className="mx-8">
+      <div className="lg:mx-12 mx-2">
         <Outlet />
       </div>
     </BaseLayout>

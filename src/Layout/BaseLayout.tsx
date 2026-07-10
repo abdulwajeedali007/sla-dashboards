@@ -1,11 +1,11 @@
 import {
-  BarChart3,
+  // BarChart3,
   CalendarDays,
   ListOrderedIcon,
   MenuIcon,
   // MenuIcon,
   Table,
-  Workflow,
+  // Workflow,
   X,
 } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
@@ -89,14 +89,14 @@ function BaseLayout({ children }: { children: React.ReactNode }) {
             <Table size={30} strokeWidth={1} />
             <p>Cluster Overview</p>
           </NavLink>{' '}
-          <NavLink
+          {/* <NavLink
             to="/task-wise-details"
             className={navClass}
             onClick={() => setShow(false)}
           >
             <BarChart3 size={30} strokeWidth={1} />
             <p>Task Wise Details</p>
-          </NavLink>
+          </NavLink> */}
           <NavLink
             to="/department-wise-sla"
             className={navClass}
@@ -113,14 +113,14 @@ function BaseLayout({ children }: { children: React.ReactNode }) {
             <ListOrderedIcon size={30} strokeWidth={1} />
             <p>Overall Department Wise SLA</p>
           </NavLink>
-          <NavLink
+          {/* <NavLink
             to="/control-room"
             className={navClass}
             onClick={() => setShow(false)}
           >
             <Workflow size={30} strokeWidth={1} />
             <p>Control Room</p>
-          </NavLink>
+          </NavLink> */}
         </div>
       </nav>
     </>

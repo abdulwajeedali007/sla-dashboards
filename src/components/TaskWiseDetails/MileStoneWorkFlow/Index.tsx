@@ -1,9 +1,9 @@
 import MilestoneNode from './MilestoneNode/Index';
-import TaskDetailsPopup from '../../components/TaskDetailsPopup/Index';
-import ProgressBar from '../../components/ProgressBar/Index';
-import type { SlaTask } from '../../Types';
+import TaskDetailsPopup from '../../TaskDetailsPopup/Index';
+import ProgressBar from '../../ProgressBar/Index';
+import type { SlaTask } from '../../../Types';
 import { useSelector } from 'react-redux';
-import type { RootState } from '../../store';
+import type { RootState } from '../../../store';
 
 import { useState } from 'react';
 

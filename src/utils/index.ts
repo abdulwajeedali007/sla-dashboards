@@ -300,10 +300,23 @@ export const departmentWiseSLADetalis = (data: SingleDepartmentTypeApi[]) => {
 // STATUS BG COLOR
 export let getStatusColor = (taskStatus: string) => {
   return taskStatus === 'Completed'
-    ? 'bg-(--success-color)'
+    ? 'bg-(--success-color) border-green-800'
     : taskStatus === 'In progress'
-      ? 'bg-(--warning-color)'
+      ? 'bg-(--warning-color) border-yellow-800'
       : taskStatus === 'Skipped'
-        ? 'bg-(--danger-color)'
-        : 'bg-gray-400';
+        ? 'bg-(--danger-color) border-red-800'
+        : taskStatus === 'New'
+          ? 'bg-gray-400 border-gray-500'
+          : '';
+};
+export let getStatusColorForControlRoom = (taskStatus: string) => {
+  return taskStatus === 'Completed'
+    ? 'bg-(--success-color) border-green-800'
+    : taskStatus === 'In progress'
+      ? 'bg-(--warning-color) border-yellow-800'
+      : taskStatus === 'Skipped'
+        ? 'bg-(--danger-color) border-red-800'
+        : taskStatus === 'New'
+          ? 'bg-gray-300 border-gray-500'
+          : '';
 };

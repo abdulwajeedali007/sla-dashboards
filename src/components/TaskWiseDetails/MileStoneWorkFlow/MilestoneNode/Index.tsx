@@ -1,8 +1,8 @@
 import { useDispatch } from 'react-redux';
-import type { SlaTask } from '../../../Types';
-import type { AppDispatch } from '../../../store';
-import { fetchTaskDetails } from '../../../store/SingleTaskDetailsSlice';
-import { getStatusColor } from '../../../utils';
+import type { SlaTask } from '../../../../Types';
+import type { AppDispatch } from '../../../../store';
+import { fetchTaskDetails } from '../../../../store/SingleTaskDetailsPopupSlice';
+import { getStatusColor } from '../../../../utils';
 
 function Index({
   step,

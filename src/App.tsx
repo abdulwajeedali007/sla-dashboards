@@ -23,11 +23,6 @@ function App() {
         <Route path="/cluster-overview" element={<ClusterOverviewPage />} />
 
         <Route
-          path="/task-wise-details/:id"
-          element={<TaskWiseDetailsPage />}
-        />
-
-        <Route
           path="/department-wise-sla"
           element={<DepartmentWiseSLAPage />}
         />
@@ -41,6 +36,10 @@ function App() {
       {/* Full Width Pages */}
       <Route element={<FullWidthLayout />}>
         <Route path="/control-room" element={<ControlRoomPage />} />
+        <Route
+          path="/task-wise-details/:id"
+          element={<TaskWiseDetailsPage />}
+        />
       </Route>
 
       {/* Default Route */}

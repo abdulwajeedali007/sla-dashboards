@@ -3,11 +3,12 @@ import { useDispatch } from 'react-redux';
 
 import slaTasksSlice from './TaskWiseDetailsSlice';
 import calenderLaunch from './ClusterCalenderLaunchSlice';
-import taskDetailsSlice from './SingleTaskDetailsSlice';
+import taskDetailsSlice from './SingleTaskDetailsPopupSlice';
 import departmentwiseSlaSlice from './DepartmentWiseSLASlice';
 import departmentwiseSlaDrilldownSlice from './DepartmentWiseSLADrillDownSlice';
 import overalldepartmentwiseSlaSlice from './overallDepartmentWiseSLASlice';
 import overalldepartmentwiseSlaDrilldownSlice from './OverallDepartmentWiseSLADrillDownSlice';
+import projectDetailsSlice from './ProjectDetailsSlice';
 const store = configureStore({
   reducer: {
     slaTasks: slaTasksSlice,
@@ -17,6 +18,7 @@ const store = configureStore({
     departmentwiseSlaDrilldown: departmentwiseSlaDrilldownSlice,
     overalldepartmentwiseSla: overalldepartmentwiseSlaSlice,
     overalldepartmentwiseSlaDrilldown: overalldepartmentwiseSlaDrilldownSlice,
+    projectDetails: projectDetailsSlice,
   },
 });
 
