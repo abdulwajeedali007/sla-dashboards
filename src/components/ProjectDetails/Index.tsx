@@ -2,7 +2,7 @@ import { useSelector } from 'react-redux';
 import type { RootState } from '../../store';
 
 function Index() {
-  const { loading, data } = useSelector(
+  const {  data } = useSelector(
     (state: RootState) => state.projectDetails,
   );
   return (
