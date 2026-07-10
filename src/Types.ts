@@ -153,3 +153,15 @@ export type DepartmentReducerResult = {
 
   departmentMap: Record<string, SingleDepartmentType>;
 };
+
+export type ProjectDetailsType = {
+  pyID: string;
+  SLTBookingLaunchDate: string;
+  pxObjClass: string;
+  ClusterRegion: string;
+  ProjectName: string;
+  SLTMarketingLaunchDate: string;
+  SLTProposedNumberOfInventoryUnits: string;
+  SLTClusterID: string;
+  SLTClusterName: string;
+};

@@ -72,7 +72,7 @@ function Index() {
   // console.log('loading', loading);
   // const initialNodes = buildNodes([]);
   // console.log(initialNodes);
-  const [nodes, setNodes, onNodesChange] = useNodesState([]);
+  const [nodes, setNodes, onNodesChange] = useNodesState<Node>([]);
   const [edges, setEdges, onEdgesChange] = useEdgesState(initialEdges);
 
   const onConnect = useCallback((params: Connection) => {
@@ -93,7 +93,7 @@ function Index() {
     // }
   }, [dispatch]);
   useEffect(() => {
-    if (data?.length > 0) {
+    if (data && data?.length > 0) {
       setNodes(buildNodes(data));
     }
   }, [data, setNodes]);

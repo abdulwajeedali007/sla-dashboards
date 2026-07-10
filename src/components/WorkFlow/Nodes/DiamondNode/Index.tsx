@@ -1,7 +1,7 @@
 import { Handle, Position, type Node, type NodeProps } from '@xyflow/react';
 import type { ComponentType } from 'react';
 import {
-  getStatusColor,
+  // getStatusColor,
   getStatusColorForControlRoom,
 } from '../../../../utils';
 type CircleNode = Node<{
@@ -17,7 +17,7 @@ type CircleNode = Node<{
 
 export default function Index({ data }: NodeProps<CircleNode>) {
   let Icon = data.Icon;
-  let status = getStatusColorForControlRoom(data.status);
+  let status = getStatusColorForControlRoom(data && data.status);
   return (
     <div className={`relative h-35 w-35`}>
       {/* Top Corner */}
