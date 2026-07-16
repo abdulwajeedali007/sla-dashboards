@@ -8,8 +8,8 @@ import type {
 } from '../Types';
 export function mileStone(
   data: SlaTask[],
-  mileStoneName?: string,
-  status?: string,
+  mileStoneName: string = '',
+  status: string = '',
 ) {
   const readinessMileStonesData =
     data &&
@@ -18,8 +18,7 @@ export function mileStone(
         return (
           milestone.Milestones !== undefined &&
           // milestone.TaskStatus === status &&
-          milestone.Milestones.toLowerCase() === mileStoneName &&
-          mileStoneName.toLowerCase()
+          milestone.Milestones.toLowerCase() === mileStoneName?.toLowerCase()
         );
       })
       .sort((a, b) =>
@@ -38,8 +37,7 @@ export function mileStone(
           steps.TaskName &&
           steps.StepNumber &&
           // milestone.TaskStatus === status &&
-          steps.TaskStatus.toLowerCase() === status &&
-          status.toLowerCase()
+          steps.TaskStatus.toLowerCase() === status?.toLowerCase()
         );
       })
       .sort((a, b) =>
@@ -66,7 +64,7 @@ export function mileStone(
   const filterMilestones = status
     ? readinessMileStonesData.filter((item) => item.TaskStatus === status)
     : readinessMileStonesData;
-
+  console.log(readinessMileStonesData);
   return {
     filterMilestones,
     percentageOfmilesStones,
