@@ -45,10 +45,8 @@ export const initialEdges: Edge[] = [
     target: '6',
     type: 'straight',
     label: 'For master projects',
-    labelBgStyle: {
-      fill: '#f2f3fa',
-    },
-    labelBgPadding: [0, 0],
+
+    labelBgPadding: [10, 0],
     // markerEnd: {
     //   type: MarkerType.ArrowClosed,
     // },
@@ -70,9 +68,9 @@ export const initialEdges: Edge[] = [
     targetHandle: 'bottom',
     type: 'smoothstep',
     label: 'For high rise',
-    labelBgStyle: {
-      fill: '#f2f3fa',
-    },
+    // labelBgStyle: {
+    //   fill: '#f2f3fa',
+    // },
     labelBgPadding: [10, 0],
     // markerEnd: {
     //   type: MarkerType.ArrowClosed,
@@ -233,9 +231,9 @@ export const initialEdges: Edge[] = [
     sourceHandle: 'bottom',
     type: 'smoothstep',
     label: 'REJECTED',
-    labelBgStyle: {
-      fill: '#f2f3fa',
-    },
+    // labelBgStyle: {
+    //   fill: '#f2f3fa',
+    // },
     labelBgPadding: [10, 0],
   },
   {
@@ -472,9 +470,9 @@ export const initialEdges: Edge[] = [
     targetHandle: 'left',
     type: 'smoothstep',
     label: 'REJECTED',
-    labelBgStyle: {
-      fill: '#f2f3fa',
-    },
+    // labelBgStyle: {
+    //   fill: '#f2f3fa',
+    // },
     labelBgPadding: [10, 0],
   },
   {
@@ -493,9 +491,9 @@ export const initialEdges: Edge[] = [
     targetHandle: 'left',
     type: 'smoothstep',
     label: 'REJECTED',
-    labelBgStyle: {
-      fill: '#f2f3fa',
-    },
+    // labelBgStyle: {
+    //   fill: '#f2f3fa',
+    // },
     labelBgPadding: [10, 0],
   },
   {
@@ -630,7 +628,7 @@ export const initialEdges: Edge[] = [
     target: '51',
     sourceHandle: 'bottom',
     targetHandle: 'top',
-    type: 'smoothstep',
+    type: 'stright',
   },
   {
     id: 'id50-id52',
@@ -644,7 +642,7 @@ export const initialEdges: Edge[] = [
     target: '53',
     sourceHandle: 'bottom',
     targetHandle: 'top',
-    type: 'smoothstep',
+    type: 'stright',
   },
   {
     id: 'id36-id54',
@@ -666,7 +664,7 @@ export const initialEdges: Edge[] = [
     target: '59',
     sourceHandle: 'bottom',
     targetHandle: 'top',
-    type: 'smoothstep',
+    type: 'stright',
   },
   {
     id: 'id55-id56',
@@ -686,7 +684,7 @@ export const initialEdges: Edge[] = [
     target: '58',
     sourceHandle: 'bottom',
     targetHandle: 'top',
-    type: 'smoothstep',
+    type: 'stright',
   },
   {
     id: 'id57-id53',
@@ -718,7 +716,7 @@ export const initialEdges: Edge[] = [
     target: '61',
     sourceHandle: 'bottom',
     targetHandle: 'top',
-    type: 'smoothstep',
+    type: 'stright',
   },
   {
     id: 'id60-id62',
@@ -762,9 +760,7 @@ export const initialEdges: Edge[] = [
     targetHandle: 'top',
     type: 'smoothstep',
     label: 'REJECTED',
-    labelBgStyle: {
-      fill: '#f2f3fa',
-    },
+
     labelBgPadding: [10, 0],
   },
   {
@@ -830,7 +826,7 @@ export const initialEdges: Edge[] = [
     target: '75',
     sourceHandle: 'bottom',
     targetHandle: 'top',
-    type: 'smoothstep',
+    type: 'stright',
   },
   {
     id: 'id74-id76',
@@ -860,9 +856,9 @@ export const initialEdges: Edge[] = [
     targetHandle: 'left',
     type: 'smoothstep',
     label: 'REJECTED',
-    labelBgStyle: {
-      fill: '#f2f3fa',
-    },
+    // labelBgStyle: {
+    //   fill: '#f2f3fa',
+    // },
     labelBgPadding: [10, 0],
   },
   {
@@ -879,9 +875,9 @@ export const initialEdges: Edge[] = [
     targetHandle: 'left',
     type: 'smoothstep',
     label: 'REJECTED',
-    labelBgStyle: {
-      fill: '#f2f3fa',
-    },
+    // labelBgStyle: {
+    //   fill: '#f2f3fa',
+    // },
     labelBgPadding: [10, 0],
   },
   {
@@ -896,7 +892,7 @@ export const initialEdges: Edge[] = [
     target: '81',
     sourceHandle: 'bottom',
     targetHandle: 'top',
-    type: 'smoothstep',
+    type: 'stright',
   },
   {
     id: 'id80-id82',

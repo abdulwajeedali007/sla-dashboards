@@ -1,29 +1,11 @@
-import type { Node } from '@xyflow/react';
+// import type { Node } from '@xyflow/react';
 import { Mail, PersonStanding, Settings } from 'lucide-react';
 
-export const initialNodes: Node[] = [
+export const initialNodes: any = [
   {
-    id: 'title',
-    type: 'TitleNode',
-    position: { x: 1100, y: -780 },
-    data: { label: 'Control Room', borderColor: 'bg-green-600' },
-    draggable: false,
-    selectable: false,
-    focusable: false,
-  },
-  {
-    id: 'legends',
-    type: 'Legends',
-    position: { x: 2200, y: -650 },
-    data: {},
-    draggable: false,
-    selectable: false,
-    focusable: false,
-  },
-  {
-    id: 'info',
-    type: 'Info',
-    position: { x: 7500, y: 250 },
+    id: 'InfoBlock',
+    type: 'InfoBlock',
+    // position: { x: 7500, y: 250 },
     data: {},
     draggable: false,
     selectable: false,
@@ -32,18 +14,17 @@ export const initialNodes: Node[] = [
   {
     id: 'IP',
     type: 'GroupNode',
-    position: { x: 1100, y: -550 },
+    // position: { x: 1100, y: -550 },
     data: {
-      label: 'INVENTORY & PRICINGREADINESS',
-      height: '900',
-      width: '3000',
+      label: 'Inventory & Pricing Readiness',
+      height: '1050',
+      width: '4000',
       bgColor: 'bg-indigo-100',
       borderColor: 'border-indigo-300',
 
       // width: 2200,
       // height: 300,
     },
-
     draggable: false,
     selectable: false,
     focusable: false,
@@ -54,11 +35,11 @@ export const initialNodes: Node[] = [
   {
     id: 'BR',
     type: 'GroupNode',
-    position: { x: 4350, y: 300 },
+    // position: { x: 4350, y: 300 },
     data: {
-      label: 'BOOKING READINESS',
-      height: '1050',
-      width: '3000',
+      label: 'Booking Readiness',
+      height: '1250',
+      width: '3500',
       bgColor: 'bg-mist-200',
       borderColor: 'border-mist-300',
       // IconColor: 'text-yellow-600',
@@ -75,11 +56,11 @@ export const initialNodes: Node[] = [
   {
     id: 'FR',
     type: 'GroupNode',
-    position: { x: 1100, y: 1100 },
+    // position: { x: 1050, y: 1100 },
     data: {
-      label: 'FINANCIAL READINESS',
-      height: '1150',
-      width: '3000',
+      label: 'Financial Readiness',
+      height: '1350',
+      width: '2500',
       bgColor: 'bg-mauve-200',
       borderColor: 'border-mauve-300',
       // width: 2200,
@@ -94,7 +75,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '1',
-    position: { x: -1100, y: 495 },
+
     data: {
       label: 'MDO',
       text: 'Initiate Tracker, Select theCluster ID, Cluster Name &Provide Marketing Name,Launch Date',
@@ -109,7 +90,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '2',
-    position: { x: -750, y: 495 },
+    // position: { x: -750, y: 495 },
     data: {
       label: 'DEVELOPMENT & CONCEPT',
       text: 'Uploads F&A ACC and Provide Project Details',
@@ -124,7 +105,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '3',
-    position: { x: -350, y: 475 },
+    // position: { x: -350, y: 475 },
     data: {
       label: 'DESIGN & CONCEPT HOD',
       text: 'Approval',
@@ -139,7 +120,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '4',
-    position: { x: -100, y: 475 },
+    // position: { x: -100, y: 475 },
     data: {
       label: 'BUDGETING HOD',
       text: 'Approval',
@@ -154,7 +135,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '5',
-    position: { x: 150, y: 475 },
+    // position: { x: 150, y: 475 },
     data: {
       label: 'Topology Based',
       text: 'Approval',
@@ -166,7 +147,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '6',
-    position: { x: 500, y: 475 },
+    // position: { x: 500, y: 475 },
     data: {
       label: 'Technical Design HOD',
       text: 'Approval',
@@ -181,7 +162,8 @@ export const initialNodes: Node[] = [
   },
   {
     id: '7',
-    position: { x: 800, y: 475 },
+    // position: { x: 800, y: 475 },
+
     data: {
       label: 'Parallel Task',
       borderColor: 'border-gray-600',
@@ -191,7 +173,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '8',
-    position: { x: 1400, y: -200 },
+    // position: { x: 1400, y: -200 },
     data: {
       label: 'TECHNICAL DESIGN',
       text: 'Upload documents & Consultant letter',
@@ -204,7 +186,7 @@ export const initialNodes: Node[] = [
 
   {
     id: '9',
-    position: { x: 1180, y: -300 },
+    // position: { x: 1180, y: -300 },
     data: {
       label: 'SALESFORCE',
       color: 'bg-green-100',
@@ -216,7 +198,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '10',
-    position: { x: 1680, y: -380 },
+    // position: { x: 1680, y: -380 },
     data: {
       label: 'TECHNICAL VERIFIER',
       color: 'bg-green-100',
@@ -228,7 +210,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '11',
-    position: { x: 1680, y: -10 },
+    // position: { x: 1680, y: -10 },
     data: {
       label: 'SALES ADMIN',
       color: 'bg-green-100',
@@ -240,7 +222,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '12',
-    position: { x: 2000, y: -380 },
+    // position: { x: 2000, y: -380 },
     data: {
       label: 'SALES ADMIN',
       color: 'bg-green-100',
@@ -252,7 +234,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '13',
-    position: { x: 1400, y: 200 },
+    // position: { x: 1400, y: 200 },
     data: {
       label: 'Consultant Letter Upload Tasks ends',
       color: 'bg-blue-200',
@@ -267,7 +249,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '14',
-    position: { x: 1680, y: 200 },
+    // position: { x: 1680, y: 200 },
     data: {
       label: 'Layout & Unit plan upload',
       color: 'bg-blue-200',
@@ -282,7 +264,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '15',
-    position: { x: 2250, y: -380 },
+    // position: { x: 2250, y: -380 },
     data: {
       label: 'Inventory Upload',
       color: 'bg-blue-200',
@@ -297,7 +279,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '16',
-    position: { x: 1960, y: -180 },
+    // position: { x: 1960, y: -180 },
     data: {
       label: 'SALES OPS PRICING',
       color: 'bg-blue-200',
@@ -312,7 +294,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '17',
-    position: { x: 2260, y: -180 },
+    // position: { x: 2260, y: -180 },
     data: {
       label: 'Inventory live in',
       color: 'bg-green-100',
@@ -325,7 +307,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '18',
-    position: { x: 2560, y: -180 },
+    // position: { x: 2560, y: -180 },
     data: {
       label: 'SALES OPS PRICING',
       color: 'bg-green-100',
@@ -337,7 +319,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '19',
-    position: { x: 2850, y: -200 },
+    // position: { x: 2850, y: -200 },
     data: {
       label: 'CHAIRMAN',
       color: 'bg-green-100',
@@ -349,7 +331,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '20',
-    position: { x: 3060, y: -180 },
+    // position: { x: 3060, y: -180 },
     data: {
       label: 'SALES OPs',
       color: 'bg-blue-200',
@@ -364,7 +346,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '21',
-    position: { x: 3300, y: -180 },
+    // position: { x: 3300, y: -180 },
     data: {
       label: 'SALES ADMIN',
       color: 'bg-green-100',
@@ -376,7 +358,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '22',
-    position: { x: 3560, y: -180 },
+    // position: { x: 3560, y: -180 },
     data: {
       label: 'MIS HOD',
       color: 'bg-blue-200',
@@ -391,7 +373,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '23',
-    position: { x: 3330, y: -10 },
+    // position: { x: 3330, y: -10 },
     data: {
       label: 'Upload Pricing task Ends',
       color: 'bg-blue-200',
@@ -405,7 +387,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '24',
-    position: { x: 2700, y: 180 },
+    // position: { x: 2700, y: 180 },
     data: {
       label: 'Add Sync back to Salesforce',
       color: 'bg-blue-200',
@@ -419,7 +401,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '25',
-    position: { x: 1500, y: 370 },
+    // position: { x: 1500, y: 370 },
     data: {
       label: 'MARKETING',
       text: 'Enter their Estimated Completion Date',
@@ -434,7 +416,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '26',
-    position: { x: 1750, y: 370 },
+    // position: { x: 1750, y: 370 },
     data: {
       label: 'MARKETING',
       text: 'Mark the completion of Marketing Material Readiness',
@@ -449,7 +431,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '27',
-    position: { x: 2000, y: 370 },
+    // position: { x: 2000, y: 370 },
     data: {
       label: 'DIGITAL MARKETING',
       text: 'Creative Adaptation Preparation',
@@ -463,7 +445,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '28',
-    position: { x: 2800, y: 380 },
+    // position: { x: 2800, y: 380 },
     data: {
       label: 'CREATIVE HEAD',
       text: 'Approval of Adaptations',
@@ -478,7 +460,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '29',
-    position: { x: 3050, y: 380 },
+    // position: { x: 3050, y: 380 },
     data: {
       label: 'DIGITAL MARKETING',
       text: 'Campaign Execution',
@@ -493,12 +475,12 @@ export const initialNodes: Node[] = [
   },
   {
     id: '30',
-    position: { x: 3600, y: 370 },
+    // position: { x: 3600, y: 370 },
     data: {
       label: 'Marketing Launch Ready',
       // text: 'Campaign Execution',
-      color: 'bg-orange-300',
-      borderColor: 'border-orange-400',
+      color: 'bg-orange-400',
+      borderColor: 'border-orange-600',
 
       department: 'planning',
     },
@@ -506,7 +488,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '31',
-    position: { x: 1500, y: 570 },
+    // position: { x: 1500, y: 570 },
     data: {
       label: 'CENTRAL PLANNING',
       text: 'Calculate ACD',
@@ -518,7 +500,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '32',
-    position: { x: 1900, y: 550 },
+    // position: { x: 1900, y: 550 },
     data: {
       label: 'HOD',
       text: 'Approval',
@@ -530,7 +512,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '33',
-    position: { x: 2300, y: 550 },
+    // position: { x: 2300, y: 550 },
     data: {
       label: 'CPO ',
       text: 'Approval',
@@ -542,7 +524,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '34',
-    position: { x: 2500, y: 570 },
+    // position: { x: 2500, y: 570 },
     data: {
       label: 'Upload ACD to PM Web ',
       // text: 'Approval',
@@ -554,7 +536,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '35',
-    position: { x: 3000, y: 570 },
+    // position: { x: 3000, y: 570 },
     data: {
       label: 'PEGA validates the PM Web Upload and auto Close the task',
       // text: 'Approval',
@@ -569,7 +551,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '36',
-    position: { x: 1500, y: 750 },
+    // position: { x: 1500, y: 750 },
     data: {
       label: 'TREASURY',
       text: 'Open Corporate Bank Account and mark task as complete',
@@ -584,7 +566,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '37',
-    position: { x: 1850, y: 750 },
+    // position: { x: 1850, y: 750 },
     data: {
       label: 'TREASURY',
       text: 'Raise a SR ticketfor Finance APP team to configure Corporate Bankaccount in Fusion',
@@ -599,7 +581,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '38',
-    position: { x: 2200, y: 750 },
+    // position: { x: 2200, y: 750 },
     data: {
       label: 'Finance App',
       text: 'Configure Corporate Bank Account in Fusion',
@@ -614,7 +596,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '39',
-    position: { x: 2500, y: 750 },
+    // position: { x: 2500, y: 750 },
     data: {
       label: 'TREASURY',
       text: 'Obtain bank guarantee letter for EscrowAccount opening and mark task as complete',
@@ -629,7 +611,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '40',
-    position: { x: 1600, y: 980 },
+    // position: { x: 1600, y: 980 },
     data: {
       label: 'RERA-DLD',
       text: 'Obtain requireddocuments** for RERA registration & marks the task as complete',
@@ -644,7 +626,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '41',
-    position: { x: 1900, y: 980 },
+    // position: { x: 1900, y: 980 },
     data: {
       label: 'RERA-DLD',
       text: 'Upload RERA certificate & Project Details',
@@ -658,7 +640,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '42',
-    position: { x: 3340, y: 960 },
+    // position: { x: 3340, y: 960 },
     data: {
       label: 'RERA-DLD',
       text: 'Approval',
@@ -673,7 +655,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '43',
-    position: { x: 1700, y: 1300 },
+    // position: { x: 1700, y: 1300 },
     data: {
       label: 'TREASURY',
       text: 'Open the ESCROW account with the bank identified for the Project and mark task as complete',
@@ -688,7 +670,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '45',
-    position: { x: 1950, y: 1300 },
+    // position: { x: 1950, y: 1300 },
     data: {
       label: 'FINANCE',
       text: 'Create Account GL Code via API & Autocomplete the task after Account GL is created',
@@ -703,7 +685,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '46',
-    position: { x: 2200, y: 1300 },
+    // position: { x: 2200, y: 1300 },
     data: {
       label: 'TREASURY',
       text: 'Raise a SR ticket for Finance APP team to configure Escrow Bank account in Fusion',
@@ -718,7 +700,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '47',
-    position: { x: 2500, y: 1300 },
+    // position: { x: 2500, y: 1300 },
     data: {
       label: 'FINANCE APP',
       text: 'Configure Escrow account in fusion',
@@ -733,7 +715,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '48',
-    position: { x: 2750, y: 1300 },
+    // position: { x: 2750, y: 1300 },
     data: {
       label: 'Treasury',
       text: 'Provide the VA list',
@@ -748,7 +730,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '49',
-    position: { x: 3000, y: 1300 },
+    // position: { x: 3000, y: 1300 },
     data: {
       label: 'FINANCE AR',
       text: 'Upload VA in Fusion.Configure DLD & Other charges',
@@ -761,7 +743,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '50',
-    position: { x: 3250, y: 1300 },
+    // position: { x: 3250, y: 1300 },
     data: {
       label: 'FINANCE APP',
       text: 'Configure Receipt Methods in fusion',
@@ -774,7 +756,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '51',
-    position: { x: 3040, y: 1450 },
+    // position: { x: 3040, y: 1450 },
     data: {
       // label: 'Task is auto-marked ascomplete inPega',
       text: 'Task is auto-marked as complete inPega',
@@ -788,7 +770,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '52',
-    position: { x: 3600, y: 1290 },
+    // position: { x: 3600, y: 1290 },
     data: {
       // label: 'FINANCE APP',
       text: 'Task is auto-marked as complete in Pega',
@@ -802,7 +784,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '53',
-    position: { x: 3290, y: 1550 },
+    // position: { x: 3290, y: 1550 },
     data: {
       // label: 'FINANCE APP',
       text: 'Finance TEAM Task Ends',
@@ -814,7 +796,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '54',
-    position: { x: 1700, y: 1650 },
+    // position: { x: 1700, y: 1650 },
     data: {
       label: 'FINANCE',
       text: 'Create Project GLCode & Autocomplete the taskafter Project GL iscreated',
@@ -829,7 +811,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '55',
-    position: { x: 2000, y: 1650 },
+    // position: { x: 2000, y: 1650 },
     data: {
       label: 'FINANCE',
       text: 'Maps the Project GL Code to the inventory and marks the task as complete',
@@ -842,7 +824,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '56',
-    position: { x: 2450, y: 1650 },
+    // position: { x: 2450, y: 1650 },
     data: {
       label: 'Treasury',
       text: 'Provide the CVA list',
@@ -857,7 +839,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '57',
-    position: { x: 2810, y: 1650 },
+    // position: { x: 2810, y: 1650 },
     data: {
       label: 'FINANCE AR',
       text: 'Upload CVA inFusion. ConfigureDLD & Other charges',
@@ -870,7 +852,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '58',
-    position: { x: 2850, y: 1850 },
+    // position: { x: 2850, y: 1850 },
     data: {
       // label: 'FINANCE AR',
       text: 'Task is auto-marked ascomplete inPega',
@@ -885,7 +867,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '59',
-    position: { x: 2040, y: 1850 },
+    // position: { x: 2040, y: 1850 },
     data: {
       // label: 'FINANCE AR',
       text: 'Task is auto-marked as complete in Pega',
@@ -899,7 +881,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '60',
-    position: { x: 2250, y: 1950 },
+    // position: { x: 2250, y: 1950 },
     data: {
       label: 'FINANCE APP',
       text: 'Configure Receipt Methods with corporate bank account',
@@ -912,11 +894,11 @@ export const initialNodes: Node[] = [
   },
   {
     id: '61',
-    position: { x: 2280, y: 2080 },
+    // position: { x: 2280, y: 2080 },
     data: {
       // label: 'FINANCE AR',
       text: 'Task is auto-marked as complete in Pega',
-      color: 'bg-black-200',
+      color: 'bg-blue-200',
       department: 'planning',
       Icon: Settings,
       borderColor: 'border-blue-600',
@@ -927,7 +909,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '62',
-    position: { x: 2650, y: 1935 },
+    // position: { x: 2650, y: 1935 },
     data: {
       // label: 'FINANCE AR',
       text: 'Fin App Task Ends',
@@ -939,7 +921,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '63',
-    position: { x: 4500, y: 610 },
+    // position: { x: 4500, y: 610 },
     data: {
       label: 'SALES ADMIN',
       text: 'Test Booking by releasing Unit',
@@ -953,7 +935,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '64',
-    position: { x: 5500, y: 610 },
+    // position: { x: 5500, y: 610 },
     data: {
       label: 'MID OFFICE',
       text: 'Verify URRF',
@@ -966,7 +948,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '65',
-    position: { x: 5500, y: 400 },
+    // position: { x: 5500, y: 400 },
     data: {
       text: 'Task is auto-marked as complete in Pega',
       color: 'bg-blue-200',
@@ -979,7 +961,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '66',
-    position: { x: 5800, y: 600 },
+    // position: { x: 5800, y: 600 },
     data: {
       label: 'SALES OPS HOD',
       text: 'Approval via email',
@@ -994,7 +976,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '67',
-    position: { x: 6200, y: 650 },
+    // position: { x: 6200, y: 650 },
     data: {
       label: 'SALES ADMIN',
       text: 'Cancel Test Booking',
@@ -1006,8 +988,8 @@ export const initialNodes: Node[] = [
   },
   {
     id: '68',
-    position: { x: 6250, y: 480 },
-    data: {
+    // position: { x: 6250, y: 480 },
+    data: { 
       text: 'Task is auto-marked ascomplete in Pega',
       color: 'bg-blue-200',
       department: 'planning',
@@ -1021,7 +1003,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '69',
-    position: { x: 6800, y: 640 },
+    // position: { x: 6800, y: 640 },
     data: {
       text: 'Booking Launch Ready',
       color: 'bg-red-100',
@@ -1032,7 +1014,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '70',
-    position: { x: 4500, y: 1000 },
+    // position: { x: 4500, y: 1000 },
     data: {
       label: 'LEGAL',
       text: 'Confirms Draft SPA creation',
@@ -1047,7 +1029,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '71',
-    position: { x: 4500, y: 780 },
+    // position: { x: 4500, y: 780 },
     data: {
       label: 'SALESFORCE IT',
       text: 'Uploads draft SPA',
@@ -1060,7 +1042,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '72',
-    position: { x: 4750, y: 1000 },
+    // position: { x: 4750, y: 1000 },
     data: {
       label: 'CONTRACTS/CDC',
       text: 'Confirms Completion of Draft SPA Validation & Watermark Addition',
@@ -1075,7 +1057,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '73',
-    position: { x: 5000, y: 800 },
+    // position: { x: 5000, y: 800 },
     data: {
       text: 'Task is auto-marked as complete in Pega',
       color: 'bg-blue-200',
@@ -1088,7 +1070,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '74',
-    position: { x: 5000, y: 1000 },
+    // position: { x: 5000, y: 1000 },
     data: {
       label: 'SALES ADMIN',
       text: 'Test Booking by releasing Unit',
@@ -1102,7 +1084,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '75',
-    position: { x: 5040, y: 1150 },
+    // position: { x: 5040, y: 1150 },
     data: {
       text: 'Task is auto-marked as complete in Pega',
       color: 'bg-blue-200',
@@ -1115,7 +1097,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '76',
-    position: { x: 5300, y: 1000 },
+    // position: { x: 5300, y: 1000 },
     data: {
       label: 'MID OFFICE',
       text: 'Verify URRF & SPA in Salesforce',
@@ -1129,7 +1111,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '77',
-    position: { x: 5300, y: 800 },
+    // position: { x: 5300, y: 800 },
     data: {
       text: 'Task is auto-marked as complete in Pega',
       color: 'bg-blue-200',
@@ -1143,7 +1125,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '78',
-    position: { x: 5600, y: 1000 },
+    // position: { x: 5600, y: 1000 },
     data: {
       label: 'SALES OPS HOD',
       text: 'Approval via email',
@@ -1158,7 +1140,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '79',
-    position: { x: 6000, y: 1000 },
+    // position: { x: 6000, y: 1000 },
     data: {
       label: 'LEGAL HOD',
       text: 'Approval on test SPA',
@@ -1173,7 +1155,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '80',
-    position: { x: 6500, y: 1030 },
+    // position: { x: 6500, y: 1030 },
     data: {
       label: 'SALES ADMIN',
       text: 'Cancel Test Booking',
@@ -1186,7 +1168,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '81',
-    position: { x: 6540, y: 1200 },
+    // position: { x: 6540, y: 1200 },
     data: {
       text: 'Task is auto-marked as complete in Pega',
       color: 'bg-blue-200',
@@ -1200,7 +1182,7 @@ export const initialNodes: Node[] = [
   },
   {
     id: '82',
-    position: { x: 7200, y: 950 },
+    // position: { x: 7200, y: 950 },
     data: {
       text: 'SPA & Booking Launch Ready',
       color: 'bg-red-200',
@@ -1212,11 +1194,11 @@ export const initialNodes: Node[] = [
   },
   {
     id: '83',
-    position: { x: 8500, y: 1550 },
+    // position: { x: 8500, y: 1550 },
     data: {
       text: 'Ready to Accept Bookings',
-      color: 'bg-orange-300',
-      borderColor: 'border-orange-400',
+      color: 'bg-orange-400',
+      borderColor: 'border-orange-600',
       department: 'planning',
       // IconColor: 'text-yellow-600',
     },

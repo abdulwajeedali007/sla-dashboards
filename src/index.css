@@ -36,6 +36,10 @@ body {
     scrollbar-color: #94a3b8 #f1f5f9;
   }
 }
+/* .react-flow__edge-path {
+  stroke: #2563eb;
+  stroke-width: 2;
+} */
 :root {
   /* ==========================================
      COLORS

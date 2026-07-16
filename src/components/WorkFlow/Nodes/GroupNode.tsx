@@ -7,7 +7,7 @@ type GroupNode = Node<{
   bgColor?: string;
   borderColor?: string;
 }>;
-export default function Index({ data }: NodeProps<GroupNode>) {
+export default function GroupNode({ data }: NodeProps<GroupNode>) {
   return (
     <div
       className={`pointer-events-none rounded-2xl -z-10 border-3 ${data.bgColor} ${data.borderColor}`}
@@ -16,7 +16,9 @@ export default function Index({ data }: NodeProps<GroupNode>) {
         height: `${data.height}px`,
       }}
     >
-      <div className="p-3 font-bold text-[36px] text-center">{data.label}</div>
+      <div className="p-3 font-bold text-[36px] capitalize text-center">
+        {data.label}
+      </div>
     </div>
   );
 }
