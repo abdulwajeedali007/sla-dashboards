@@ -18,7 +18,8 @@ export function mileStone(
         return (
           milestone.Milestones !== undefined &&
           // milestone.TaskStatus === status &&
-          milestone.Milestones.toLowerCase() === mileStoneName.toLowerCase()
+          milestone.Milestones.toLowerCase() === mileStoneName &&
+          mileStoneName.toLowerCase()
         );
       })
       .sort((a, b) =>
@@ -37,7 +38,8 @@ export function mileStone(
           steps.TaskName &&
           steps.StepNumber &&
           // milestone.TaskStatus === status &&
-          steps.TaskStatus.toLowerCase() === status.toLowerCase()
+          steps.TaskStatus.toLowerCase() === status &&
+          status.toLowerCase()
         );
       })
       .sort((a, b) =>
