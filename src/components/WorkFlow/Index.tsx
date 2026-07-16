@@ -19,11 +19,11 @@ import {
 } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
 // import { useNavigate } from 'react-router';
-import RectangleNode from './Nodes/RectangleNode';
+import RectangleComp from './Nodes/RectangleNode';
 import DiamondNode from './Nodes/DiamondNode';
 import CircleNode from './Nodes/CircleNode';
 import GroupNode from './Nodes/GroupNode';
-// import TitleNode from '../../components/WorkFlow/Nodes/TitleNode';
+import TitleNode from '../../components/WorkFlow/Nodes/TitleNode';
 import Legends from '../Legends/Index';
 import TaskDetailsPopup from '../../components/TaskDetailsPopup/Index';
 import Loader from '../../components/Loader/Index';
@@ -39,15 +39,11 @@ import { buildNodes } from './workflowBuilder1';
 import { fetchTaskDetails } from '../../store/SingleTaskDetailsPopupSlice';
 import { fetchSlaTasks } from '../../store/TaskWiseDetailsSlice';
 import { useParams } from 'react-router';
-import type { SlaTask, TaskDetail } from '../../Types';
+import type { SlaTask } from '../../Types';
 // import { format } from 'date-fns';
 import { getStatusColor, mileStone } from '../../utils';
 import {
-  Building2,
-  Calendar,
   Construction,
-  Info,
-  UserRound,
 } from 'lucide-react';
 // import Legends from '../Legends/Index';
 // import { fetchSlaTasks } from '../../store/TaskWiseDetailsSlice';
@@ -60,13 +56,13 @@ const nodeTypes = {
   circle: CircleNode,
   GroupNode: GroupNode,
   InfoBlock: InfoBlock,
-  // TitleNode: TitleNode,
+  TitleNode: TitleNode,
   // Legends,
 };
 
 function Index() {
   const dispatch = useDispatch<AppDispatch>();
-  const { fitView } = useReactFlow();
+  // const { fitView } = useReactFlow();
   const [selectedNode, setSelectedNode] = useState<Node | false>(false);
   const { data, loading } = useSelector((state: RootState) => state.slaTasks);
   const { data: taskDetailsData, loading: loadingtaskDetailsData } =
