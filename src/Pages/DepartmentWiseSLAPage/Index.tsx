@@ -18,6 +18,7 @@ import type { AppDispatch, RootState } from '../../store';
 import { departmentWiseSLADetalis } from '../../utils';
 import { useEffect } from 'react';
 import { fetchdepartmentwisedetails } from '../../store/DepartmentWiseSLASlice';
+import { fetchProjectDetails } from '../../store/ProjectDetailsSlice';
 
 function Index() {
   const dispatch = useDispatch<AppDispatch>();
@@ -34,7 +35,8 @@ function Index() {
     departmentWiseSLADetalis(data ?? []);
 
   useEffect(() => {
-    dispatch(fetchdepartmentwisedetails('SLT-1199'));
+    dispatch(fetchdepartmentwisedetails('SLT-1672'));
+    dispatch(fetchProjectDetails(''));
   }, []);
 
   if (loading) {
@@ -43,7 +45,9 @@ function Index() {
   return (
     <div className="my-9">
       <Title heading="Department wise SLA" />
-      <ProjectDetails />
+      <div className="mb-9">
+        <ProjectDetails />
+      </div>
       <div className="mb-9 flex gap-6 flex-col lg:flex-row md:flex-wrap">
         <InfoBlock
           Icon={Tags}
