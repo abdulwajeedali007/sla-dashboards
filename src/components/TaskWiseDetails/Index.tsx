@@ -22,6 +22,7 @@ import { fetchSlaTasks } from '../../store/TaskWiseDetailsSlice';
 
 import InfoBlock from '../../components/InfoBlock/Index';
 import ProjectDetails from '../../components/ProjectDetails/Index';
+import Legends from '../../components/Legends/Index';
 import MileStoneWorkFlow from './MileStoneWorkFlow/Index';
 import Loader from '../../components/Loader/Index';
 import Title from '../../components/Title/Index';
@@ -37,14 +38,10 @@ function Index() {
   const dispatch = useDispatch<AppDispatch>();
   const { id } = useParams();
 
-  const { loading, data } = useSelector((state: RootState) => state.slaTasks);
-  // console.log(data, 'taskDetails');
+  const { data, loading } = useSelector((state: RootState) => state.slaTasks);
   function getStatusFilterData(value: string) {
     setStatus(value);
   }
-  // function handleShowTab(value: string) {
-  //   setShowTab(value);
-  // }
   const {
     filterMilestones: initialTrackerData,
     percentageOfmilesStones: percentageOfInitialTracker,
@@ -89,8 +86,6 @@ function Index() {
 
   const clusterPercentage = (taskStatus.Completed / 42) * 100;
 
-  // console.log(clusterPercentage, 'percentage');
-
   useEffect(() => {
     if (id) {
       dispatch(fetchSlaTasks(id));
@@ -104,7 +99,9 @@ function Index() {
   return (
     <div className="my-9">
       <Title heading={'Task Wise Details'} />
-      <ProjectDetails />
+      <div className="mb-9">
+        <ProjectDetails />
+      </div>
       <div className="mb-9 flex gap-6 flex-col lg:flex-row md:flex-wrap">
         <InfoBlock
           Icon={CircleCheckBig}
@@ -116,7 +113,7 @@ function Index() {
         <InfoBlock
           Icon={ClipboardList}
           title="Completed Steps"
-          value={`${taskStatus.Completed}/42`}
+          value={`${taskStatus.Completed}/${data && data.length}`}
           IconColor="text-green-700"
         />
         <InfoBlock
@@ -142,7 +139,7 @@ function Index() {
           info={'Steps'}
         />
       </div>
-      <div className="flex justify-start gap-4 items-center mb-4 px-4 text-wrap ">
+      {/* <div className="flex justify-start gap-4 items-center mb-4 px-4 text-wrap ">
         <div className="md:flex md:gap-4">
           <div
             className={`group flex items-center gap-3 mb-2 md:w-auto md:mb-0 border border-(--gold-accent) px-2 py-1 rounded-[20px] hover:cursor-pointer hover:text-white hover:bg-(--gold-accent) ${status === 'Completed' ? 'bg-(--gold-accent) text-white' : ''}`}
@@ -188,18 +185,20 @@ function Index() {
             className="flex items-center gap-3 mb-2 md:w-auto md:mb-0 border border-(--gold-accent) px-3 py-1 rounded-[20px] hover:text-white hover:cursor-pointer hover:bg-(--gold-accent)"
             onClick={() => setStatus('')}
           >
-            {/* <div className="h-6 w-6 border border-gray-400 rounded-full p-[2px]">
-              <div className="h-full w-full rounded-full bg-gray-500"></div>
-            </div> */}
             <p className="text-base lg:text-base">Reset</p>
           </div>
         </div>
-      </div>
+      </div> */}
+      <Legends
+        getStatusFilterData={getStatusFilterData}
+        setStatus={setStatus}
+        status={status}
+      />
       <div className="grid grid-cols-12 gap-8">
         <div className="col-span-12 lg:col-span-9">
           <div className="">
             <MileStoneWorkFlow
-              title={initialTracker}
+              title={(initialTracker && initialTracker) ?? ''}
               percentage={percentageOfInitialTracker}
               steps={initialTrackerData}
               Icon={ClipboardList}
@@ -211,31 +210,31 @@ function Index() {
               // mileStoneNo={1}
             />
             <MileStoneWorkFlow
-              title={inventoryPricing}
+              title={(inventoryPricing && inventoryPricing) ?? ''}
               percentage={percentageOfInventoryPricing}
               steps={inventoryPricingData}
               Icon={Package}
             />
             <MileStoneWorkFlow
-              title={marketingReadiness}
+              title={(marketingReadiness && marketingReadiness) ?? ''}
               percentage={percentageOfMarketReadiness}
               steps={marketingReadinessData}
               Icon={Megaphone}
             />
             <MileStoneWorkFlow
-              title={financialReadiness}
+              title={(financialReadiness && financialReadiness) ?? ''}
               percentage={percentageOfFinancialReadiness}
               steps={financialReadinessData}
               Icon={Wallet}
             />
             <MileStoneWorkFlow
-              title={spaReadiness}
+              title={(spaReadiness && spaReadiness) ?? ''}
               percentage={percentageOfspaReadiness}
               steps={spaReadinessData}
               Icon={FileCheck}
             />
             <MileStoneWorkFlow
-              title={testBookingReadiness}
+              title={(testBookingReadiness && testBookingReadiness) ?? ''}
               percentage={percentageOfTestBookingReadiness}
               steps={testBookingReadinessData}
               Icon={CalendarCheck2}

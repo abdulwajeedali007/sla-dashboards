@@ -96,7 +96,9 @@ function Index() {
   }, []);
   useEffect(() => {
     // if (id) {
-    dispatch(fetchSlaTasks(id && id));
+    if (id) {
+      dispatch(fetchSlaTasks(id));
+    }
     setNodeId(firstNodeId);
     dispatch(fetchTaskDetails(nodeId));
     // }
