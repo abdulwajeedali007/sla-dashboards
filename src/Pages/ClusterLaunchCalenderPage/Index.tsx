@@ -48,7 +48,6 @@ function Index() {
     if (!data) return [];
     return data ? getFilterFormOptions(data, appliedFilter, currentYear) : [];
   }, [data, appliedFilter]);
-
   function handleResetClickButton() {
     const defaultFilter = {
       Year: currentYear,
@@ -76,13 +75,13 @@ function Index() {
         <InfoBlock
           Icon={Globe}
           title="Overall Clusters Getting Launched"
-          value={42}
+          value={48}
           IconColor="text-[#8e2157]"
         />
         <InfoBlock
           Icon={CalculatorIcon}
           title={'Upcoming Launches'}
-          value={23}
+          value={25}
           IconColor="text-blue-700"
         />
         <InfoBlock
@@ -94,7 +93,7 @@ function Index() {
         <InfoBlock
           Icon={TriangleAlert}
           title="Delayed Clusters"
-          value={2}
+          value={3}
           IconColor="text-red-700"
         />
       </div>
