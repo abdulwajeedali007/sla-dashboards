@@ -19,7 +19,7 @@ export const initialNodes: any = [
       label: 'Inventory & Pricing Readiness',
       height: '1050',
       width: '4000',
-      bgColor: 'bg-indigo-100',
+      color: 'bg-indigo-100',
       borderColor: 'border-indigo-300',
 
       // width: 2200,
@@ -40,7 +40,7 @@ export const initialNodes: any = [
       label: 'Booking Readiness',
       height: '1250',
       width: '3500',
-      bgColor: 'bg-mist-200',
+      color: 'bg-mist-200',
       borderColor: 'border-mist-300',
       // IconColor: 'text-yellow-600',
       // width: 2200,
@@ -61,7 +61,7 @@ export const initialNodes: any = [
       label: 'Financial Readiness',
       height: '1350',
       width: '2500',
-      bgColor: 'bg-mauve-200',
+      color: 'bg-mauve-200',
       borderColor: 'border-mauve-300',
       // width: 2200,
       // height: 300,
@@ -989,7 +989,7 @@ export const initialNodes: any = [
   {
     id: '68',
     // position: { x: 6250, y: 480 },
-    data: { 
+    data: {
       text: 'Task is auto-marked ascomplete in Pega',
       color: 'bg-blue-200',
       department: 'planning',

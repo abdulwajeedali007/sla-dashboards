@@ -14,7 +14,6 @@ import {
   type Node,
   type NodeMouseHandler,
   MarkerType,
-  useReactFlow,
   // Position,
 } from '@xyflow/react';
 import '@xyflow/react/dist/style.css';
@@ -42,9 +41,7 @@ import { useParams } from 'react-router';
 import type { SlaTask } from '../../Types';
 // import { format } from 'date-fns';
 import { getStatusColor, mileStone } from '../../utils';
-import {
-  Construction,
-} from 'lucide-react';
+import { Construction } from 'lucide-react';
 // import Legends from '../Legends/Index';
 // import { fetchSlaTasks } from '../../store/TaskWiseDetailsSlice';
 // import { departments } from '../../components/WorkFlow/department';
@@ -99,7 +96,7 @@ function Index() {
   }, []);
   useEffect(() => {
     // if (id) {
-    dispatch(fetchSlaTasks(id));
+    dispatch(fetchSlaTasks(id && id));
     setNodeId(firstNodeId);
     dispatch(fetchTaskDetails(nodeId));
     // }

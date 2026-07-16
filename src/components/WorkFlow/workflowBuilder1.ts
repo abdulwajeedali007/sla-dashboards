@@ -33,7 +33,6 @@ export function buildNodes(apiTasks: any[] = []) {
             text: apiTask.TaskName,
             pyGUID: apiTask.pyGUID,
             status: apiTask.TaskStatus,
-            
           }
         : node.data,
     };

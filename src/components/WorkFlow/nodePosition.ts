@@ -1,4 +1,4 @@
-export const nodePositions = {
+export const nodePositions: Record<string, { col: number; row: number }> = {
   InfoBlock: {
     col: 20,
     row: -5,

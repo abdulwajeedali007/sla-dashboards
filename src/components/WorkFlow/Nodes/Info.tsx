@@ -1,4 +1,4 @@
-import { Mail, PersonStanding, Settings, UserRound } from 'lucide-react';
+import { Mail, PersonStanding, Settings } from 'lucide-react';
 
 function Info() {
   return (

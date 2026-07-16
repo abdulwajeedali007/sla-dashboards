@@ -8,8 +8,8 @@ import type {
 } from '../Types';
 export function mileStone(
   data: SlaTask[],
-  mileStoneName: string,
-  status: string,
+  mileStoneName?: string,
+  status?: string,
 ) {
   const readinessMileStonesData =
     data &&
@@ -19,6 +19,25 @@ export function mileStone(
           milestone.Milestones !== undefined &&
           // milestone.TaskStatus === status &&
           milestone.Milestones.toLowerCase() === mileStoneName.toLowerCase()
+        );
+      })
+      .sort((a, b) =>
+        a.StepNumber.localeCompare(b.StepNumber, undefined, {
+          numeric: true,
+          sensitivity: 'base',
+        }),
+      );
+
+  const statusFilterData =
+    data &&
+    data
+      .filter((steps) => {
+        return (
+          steps.Milestones !== undefined &&
+          steps.TaskName &&
+          steps.StepNumber &&
+          // milestone.TaskStatus === status &&
+          steps.TaskStatus.toLowerCase() === status.toLowerCase()
         );
       })
       .sort((a, b) =>
@@ -46,7 +65,12 @@ export function mileStone(
     ? readinessMileStonesData.filter((item) => item.TaskStatus === status)
     : readinessMileStonesData;
 
-  return { filterMilestones, percentageOfmilesStones, mileStoneName };
+  return {
+    filterMilestones,
+    percentageOfmilesStones,
+    mileStoneName,
+    statusFilterData,
+  };
 }
 
 // GET YEARS
@@ -92,7 +116,7 @@ export function getTaskNames(
     (item) => item.SLTProjectName === selectedProjectName,
   );
   const taskNames = selectedProject.reduce<string[]>((acc, item) => {
-    if (item.SLTProjectName && !acc.includes(item.SLTClusterName)) {
+    if (item.SLTClusterName && !acc.includes(item.SLTClusterName)) {
       acc.push(item.SLTClusterName);
     }
     return acc;
@@ -120,7 +144,6 @@ export function getRegionNames(data: CalenderClusterData[]) {
 // CLUSTER OVERVIEW PROJECT & CLUSTER DETAILS
 export function clusterOverviewDetails(data: CalenderClusterData[]) {
   const totalProjects = new Set<string>();
-
   const projectDetails =
     data &&
     data?.reduce(
@@ -172,7 +195,7 @@ export function getFilterFormOptions(
   return (
     data &&
     data
-      .filter((item) => item.SLTProjectName)
+      .filter((item) => item.SLTProjectName && item.SLTClusterName)
       .filter((item) => {
         const yearMatch =
           appliedFilter.Year === currentYear ||
@@ -183,15 +206,17 @@ export function getFilterFormOptions(
 
         const projectMatch =
           appliedFilter.ProjectType === 'All' ||
-          item.SLTProjectName === appliedFilter.ProjectType;
-
+          (item.SLTProjectName != null &&
+            item.SLTProjectName === appliedFilter.ProjectType);
         const clusterMatch =
           appliedFilter.ClusterType === 'All' ||
-          item.SLTClusterName === appliedFilter.ClusterType;
+          (item.SLTClusterName != null &&
+            item.SLTClusterName === appliedFilter.ClusterType);
 
         const clusterRegionMatch =
           appliedFilter.ClusterRegion === 'All' ||
-          item.ClusterRegion === appliedFilter.ClusterRegion;
+          (item.ClusterRegion != null &&
+            item.ClusterRegion === appliedFilter.ClusterRegion);
 
         return yearMatch && projectMatch && clusterMatch && clusterRegionMatch;
       })
@@ -309,14 +334,25 @@ export let getStatusColor = (taskStatus: string) => {
           ? 'bg-gray-400 border-gray-500'
           : '';
 };
+// export let getTextStatusColor = (taskStatus: string) => {
+//   return taskStatus === 'Completed'
+//     ? 'text-(--success-color)'
+//     : taskStatus === 'In progress'
+//       ? 'text-(--warning-color)'
+//       : taskStatus === 'Skipped'
+//         ? 'text-(--danger-color)'
+//         : taskStatus === 'New'
+//           ? 'text-gray-400'
+//           : '';
+// };
 export let getStatusColorForControlRoom = (taskStatus: string) => {
   return taskStatus === 'Completed'
-    ? 'bg-(--success-color) border-green-800'
+    ? 'bg-green-600 border-green-700'
     : taskStatus === 'In progress'
-      ? 'bg-(--warning-color) border-yellow-800'
+      ? 'bg-yellow-500 border-yellow-600'
       : taskStatus === 'Skipped'
-        ? 'bg-(--danger-color) border-red-800'
+        ? 'bg-red-500 border-red-600'
         : taskStatus === 'New'
-          ? 'bg-gray-300 border-gray-500'
+          ? 'bg-gray-300 border-gray-400'
           : '';
 };
