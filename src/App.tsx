@@ -3,7 +3,7 @@ import { Routes, Route, Navigate } from 'react-router';
 import ContainerLayout from './Layout/ContainerLayout';
 import FullWidthLayout from './Layout/FullWidthLayout';
 
-import ClusterLaunchCalenderPage from './Pages/ClusterLaunchCalenderPage/Index';
+import ClusterLaunchCalendarPage from './Pages/ClusterLaunchCalendarPage/Index';
 import ClusterOverviewPage from './Pages/ClusterOverviewPage/Index';
 import TaskWiseDetailsPage from './Pages/TaskWiseDetailsPage/Index';
 import DepartmentWiseSLAPage from './Pages/DepartmentWiseSLAPage/Index';
@@ -16,8 +16,8 @@ function App() {
       {/* Container Pages */}
       <Route element={<ContainerLayout />}>
         <Route
-          path="/cluster-launch-calender"
-          element={<ClusterLaunchCalenderPage />}
+          path="/cluster-launch-calendar"
+          element={<ClusterLaunchCalendarPage />}
         />
 
         <Route path="/cluster-overview" element={<ClusterOverviewPage />} />
