@@ -74,12 +74,12 @@ function BaseLayout({ children }: { children: React.ReactNode }) {
             />
           </div>
           <NavLink
-            to="/cluster-launch-calender"
+            to="/cluster-launch-calander"
             className={navClass}
             onClick={() => setShow(false)}
           >
             <CalendarDays size={30} strokeWidth={1} />
-            <p className="m-0">Cluster Launch Calender</p>
+            <p className="m-0">Cluster Launch Calendar</p>
           </NavLink>{' '}
           <NavLink
             to="/cluster-overview"
