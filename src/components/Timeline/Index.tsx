@@ -26,7 +26,7 @@ import { getTimelineOptions } from './TimelineConfig';
 import { flattenTimelineData, groupVisibleTaskDetails } from './TimelineUtil';
 
 import type {
-  CalenderClusterData,
+  CalendarClusterData,
   TimelineCluster,
   TimelineProject,
 } from '../../Types';
@@ -46,7 +46,7 @@ const isMobile = window.innerWidth < 768;
 export default function Timeline({
   timelineTasks,
 }: {
-  timelineTasks: CalenderClusterData[];
+  timelineTasks: CalendarClusterData[];
 }) {
   // -------------------- Min & Max Dates --------------------------
   const dates = timelineTasks
@@ -90,7 +90,6 @@ export default function Timeline({
     const set = new Set<string>();
 
     groupVisibleTasks.forEach((project: any) => {
-      // console.log(project);
       project.clusters.forEach((cluster: any) => {
         set.add(`${project.projectName}__${cluster.clusterName}`);
       });
@@ -143,10 +142,10 @@ export default function Timeline({
   let runningTop = 0;
   return (
     <>
-      <div className="overflow-y-auto sm:max-h-[700px] flex custom-scrollbar">
-        <div className=" min-w-[200px] relative mt-5 ">
+      <div className="flex overflow-x-hidden overflow-y-auto sm:max-h-[700px] custom-scrollbar">
+        {/* min-w-[200px] */}
+        <div className="min-w-[200px] relative mt-5">
           {groupVisibleTasks.map((project, index) => {
-            // console.log(project);
             const currentTop = runningTop;
 
             // move pointer for next project
@@ -177,7 +176,7 @@ export default function Timeline({
             );
           })}
         </div>
-        <div className="min-w-[950px]  w-full">
+        <div className="min-w-5xl w-full">
           <TimelineChart
             data={data}
             options={options}

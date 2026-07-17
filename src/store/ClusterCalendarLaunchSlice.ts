@@ -2,12 +2,12 @@ import axios from 'axios';
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { getAccessToken } from './utils/generateTokenService';
 
-import type { CalenderClusterData } from '../Types';
+import type { CalendarClusterData } from '../Types';
 
-const apiUrl = import.meta.env.VITE_PEGA_CALENDER_LAUNCH_API_URL;
+const apiUrl = import.meta.env.VITE_PEGA_CALENDAR_LAUNCH_API_URL;
 
 const initialState: {
-  data: CalenderClusterData[] | null;
+  data: CalendarClusterData[] | null;
   loading: boolean;
   error: string | null;
 } = {
@@ -17,10 +17,10 @@ const initialState: {
 };
 
 export const fetchcalendarLaunch = createAsyncThunk<
-  CalenderClusterData[],
+  CalendarClusterData[],
   void,
   { rejectValue: { message: string } }
->('fetchcalenderLaunch', async (_, { rejectWithValue }) => {
+>('fetchcalendarLaunch', async (_, { rejectWithValue }) => {
   try {
     const getToken = await getAccessToken();
     const response = await axios.post(apiUrl, _, {
@@ -41,7 +41,7 @@ export const fetchcalendarLaunch = createAsyncThunk<
 });
 
 const calendarlaunchSlice = createSlice({
-  name: 'calenderlaunch',
+  name: 'calendarlaunch',
   initialState,
   reducers: {},
   extraReducers: (builder) => {

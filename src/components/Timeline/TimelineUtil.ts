@@ -1,8 +1,8 @@
 import { addDays, parseISO } from 'date-fns';
-import type { CalenderClusterData, TimelineCluster } from '../../Types';
+import type { CalendarClusterData, TimelineCluster } from '../../Types';
 
 export const groupVisibleTaskDetails = (
-  timelineTasks: CalenderClusterData[],
+  timelineTasks: CalendarClusterData[],
 ) => {
   return timelineTasks.reduce((acc: any[], item: any) => {
     if (!item.SLTProjectName || !item.SLTClusterName) {

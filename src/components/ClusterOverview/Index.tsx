@@ -20,7 +20,7 @@ import {
 // import TimelineChart from '../Timeline/TimelineChart';
 import { Link } from 'react-router';
 import type {
-  CalenderClusterData,
+  CalendarClusterData,
   TimelineCluster,
   TimelinePhase,
   TimelineProject,
@@ -41,7 +41,7 @@ import React from 'react';
 export default function Index({
   timelineTasks,
 }: {
-  timelineTasks: CalenderClusterData[];
+  timelineTasks: CalendarClusterData[];
 }) {
   // Group the tasks as per the requirement data
   const groupVisibleTasks: TimelineProject[] =
@@ -104,7 +104,8 @@ export default function Index({
   return (
     <>
       <div className="rounded-[20px]  bg-white overflow-x-auto border border-(--border-color) custom-scrollbar">
-        <div className="grid grid-cols-12 min-w-[1400px] sm:max-h-[800px] md:grid md:grid-cols-12 ">
+        {/* min-w-[1400px] */}
+        <div className="grid grid-cols-12 min-w-[1400px]  w-full max-h-[800px] md:grid md:grid-cols-12 ">
           {/* LEFT TABLE */}
           <table className="w-full col-span-12 border-collapse">
             <thead>

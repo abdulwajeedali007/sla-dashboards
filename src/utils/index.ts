@@ -1,6 +1,6 @@
 import { getYear, addYears, subYears, format } from 'date-fns';
 import type {
-  CalenderClusterData,
+  CalendarClusterData,
   DepartmentReducerResult,
   formStateType,
   SingleDepartmentTypeApi,
@@ -64,7 +64,6 @@ export function mileStone(
   const filterMilestones = status
     ? readinessMileStonesData.filter((item) => item.TaskStatus === status)
     : readinessMileStonesData;
-  console.log(readinessMileStonesData);
   return {
     filterMilestones,
     percentageOfmilesStones,
@@ -89,7 +88,7 @@ export function getYears() {
 }
 
 // GET PROJECT NAMES
-export function getProjectNames(data: CalenderClusterData[], Year: number) {
+export function getProjectNames(data: CalendarClusterData[], Year: number) {
   const selecteYearProjects = data
     .filter((item) => item.SLTProjectName)
     .filter(
@@ -109,7 +108,7 @@ export function getProjectNames(data: CalenderClusterData[], Year: number) {
 
 // GET TASKS NAMES
 export function getTaskNames(
-  data: CalenderClusterData[],
+  data: CalendarClusterData[],
   selectedProjectName: string,
 ) {
   const selectedProject = data.filter(
@@ -125,7 +124,7 @@ export function getTaskNames(
 }
 
 // GET REGION NAMES
-export function getRegionNames(data: CalenderClusterData[]) {
+export function getRegionNames(data: CalendarClusterData[]) {
   const selectedProject = data.filter(
     (item) =>
       item.SLTProjectName != null &&
@@ -142,7 +141,7 @@ export function getRegionNames(data: CalenderClusterData[]) {
 }
 
 // CLUSTER OVERVIEW PROJECT & CLUSTER DETAILS
-export function clusterOverviewDetails(data: CalenderClusterData[]) {
+export function clusterOverviewDetails(data: CalendarClusterData[]) {
   const totalProjects = new Set<string>();
   const projectDetails =
     data &&
@@ -188,7 +187,7 @@ export function clusterOverviewDetails(data: CalenderClusterData[]) {
 
 // FORM FILTERS
 export function getFilterFormOptions(
-  data: CalenderClusterData[],
+  data: CalendarClusterData[],
   appliedFilter: formStateType,
   currentYear: number,
 ) {
@@ -230,7 +229,8 @@ export const currentDate = format(new Date(), 'yyyy-MM-dd ');
 // Departmentwise SLA
 
 export const departmentWiseSLADetalis = (data: SingleDepartmentTypeApi[]) => {
-  const result = data.reduce<DepartmentReducerResult>(
+  const validDepartments = data.filter((item) => item.DepartmentName !== null);
+  const result = validDepartments.reduce<DepartmentReducerResult>(
     (acc, item) => {
       // ---------------------
       // Overall status counts
@@ -247,7 +247,8 @@ export const departmentWiseSLADetalis = (data: SingleDepartmentTypeApi[]) => {
       // Department lookup
       // ---------------------
 
-      let depObj = acc.departmentMap[item.DepartmentName];
+      let depObj =
+        acc.departmentMap[item.DepartmentName && item.DepartmentName];
 
       if (!depObj) {
         depObj = {

@@ -1,3 +1,6 @@
+import type { Node } from '@xyflow/react';
+import type { ComponentType, CSSProperties } from 'react';
+
 export type Task = {
   id: number;
   name: string;
@@ -54,7 +57,7 @@ export type SlaTask = {
   TaskStatus: 'New' | 'Completed' | 'In progress';
 };
 
-export type CalenderClusterData = {
+export type CalendarClusterData = {
   pyID: string;
   SLTBookingLaunchDate: string;
   pxObjClass: string;
@@ -165,3 +168,5 @@ export type ProjectDetailsType = {
   SLTClusterID: string;
   SLTClusterName: string;
 };
+
+
