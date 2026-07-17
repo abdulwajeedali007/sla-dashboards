@@ -16,7 +16,7 @@ const initialState: {
   error: null,
 };
 
-export const fetchcalenderLaunch = createAsyncThunk<
+export const fetchcalendarLaunch = createAsyncThunk<
   CalenderClusterData[],
   void,
   { rejectValue: { message: string } }
@@ -61,4 +61,4 @@ const calenderlaunchSlice = createSlice({
   },
 });
 
-export default calenderlaunchSlice.reducer;
+export default calendarlaunchSlice.reducer;
