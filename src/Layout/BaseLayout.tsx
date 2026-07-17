@@ -74,7 +74,7 @@ function BaseLayout({ children }: { children: React.ReactNode }) {
             />
           </div>
           <NavLink
-            to="/cluster-launch-calander"
+            to="/cluster-launch-calandar"
             className={navClass}
             onClick={() => setShow(false)}
           >
