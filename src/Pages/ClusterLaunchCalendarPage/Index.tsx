@@ -70,7 +70,7 @@ function Index() {
 
   return (
     <div className="my-9">
-      <Title heading={'Cluster launch calender'} />
+      <Title heading={'Cluster launch calendar'} />
       <div className="mb-9 flex gap-6 flex-col lg:flex-row">
         <InfoBlock
           Icon={Globe}
