@@ -38,7 +38,7 @@ function Index() {
   });
   const dispatch = useAppDispatch();
   const { data, loading } = useSelector(
-    (state: RootState) => state.calenderLaunch,
+    (state: RootState) => state.calendarLaunch,
   );
   function handleApplyClickButton() {
     setAppliedFilter(selected);

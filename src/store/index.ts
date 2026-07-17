@@ -2,7 +2,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { useDispatch } from 'react-redux';
 
 import slaTasksSlice from './TaskWiseDetailsSlice';
-import calenderLaunch from './ClusterCalenderLaunchSlice';
+import calendarLaunch from './ClusterCalendarLaunchSlice';
 import taskDetailsSlice from './SingleTaskDetailsPopupSlice';
 import departmentwiseSlaSlice from './DepartmentWiseSLASlice';
 import departmentwiseSlaDrilldownSlice from './DepartmentWiseSLADrillDownSlice';
@@ -12,7 +12,7 @@ import projectDetailsSlice from './ProjectDetailsSlice';
 const store = configureStore({
   reducer: {
     slaTasks: slaTasksSlice,
-    calenderLaunch: calenderLaunch,
+    calendarLaunch: calendarLaunch,
     taskDetails: taskDetailsSlice,
     departmentwiseSla: departmentwiseSlaSlice,
     departmentwiseSlaDrilldown: departmentwiseSlaDrilldownSlice,
