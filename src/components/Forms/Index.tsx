@@ -23,7 +23,7 @@ function Index({
   handleApply,
   handleReset,
 }: formStateValues) {
-  const { data } = useSelector((state: RootState) => state.calenderLaunch);
+  const { data } = useSelector((state: RootState) => state.calendarLaunch);
 
   const { years } = getYears();
   const projectNames = data ? getProjectNames(data, selected.Year) : [];

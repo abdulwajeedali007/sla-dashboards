@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { useSelector } from 'react-redux';
 
 import { useAppDispatch, type RootState } from '../../store';
-import { fetchcalenderLaunch } from '../../store/ClusterCalenderLaunchSlice';
+import { fetchcalendarLaunch } from '../../store/ClusterCalendarLaunchSlice';
 
 import ClusterOverview from '../../components/ClusterOverview/Index';
 import InfoBlock from '../../components/InfoBlock/Index';
@@ -37,14 +37,13 @@ function Index() {
   const dispatch = useAppDispatch();
 
   const { data, loading } = useSelector(
-    (state: RootState) => state.calenderLaunch,
+    (state: RootState) => state.calendarLaunch,
   );
 
   function handleApplyClickButton() {
     setAppliedFilter(selected);
   }
   const projectlevelDetails = clusterOverviewDetails((data && data) ?? []);
-  // console.log(projectlevelDetails);
 
   const timelineData = useMemo(() => {
     if (!data) return [];
@@ -63,7 +62,7 @@ function Index() {
   }
 
   useEffect(() => {
-    dispatch(fetchcalenderLaunch());
+    dispatch(fetchcalendarLaunch());
   }, [dispatch]);
 
   if (loading) {
