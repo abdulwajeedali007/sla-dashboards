@@ -61,7 +61,7 @@ function Index() {
   }
 
   useEffect(() => {
-    dispatch(fetchcalenderLaunch());
+    dispatch(fetchcalendarLaunch());
   }, []);
 
   if (loading) {

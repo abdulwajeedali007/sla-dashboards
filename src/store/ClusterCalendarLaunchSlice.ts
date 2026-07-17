@@ -40,21 +40,21 @@ export const fetchcalendarLaunch = createAsyncThunk<
   }
 });
 
-const calenderlaunchSlice = createSlice({
+const calendarlaunchSlice = createSlice({
   name: 'calenderlaunch',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchcalenderLaunch.pending, (state) => {
+      .addCase(fetchcalendarLaunch.pending, (state) => {
         state.loading = true;
         state.error = null;
       })
-      .addCase(fetchcalenderLaunch.fulfilled, (state, action) => {
+      .addCase(fetchcalendarLaunch.fulfilled, (state, action) => {
         state.loading = false;
         state.data = action.payload;
       })
-      .addCase(fetchcalenderLaunch.rejected, (state, action) => {
+      .addCase(fetchcalendarLaunch.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload?.message ?? 'API Failed';
       });
