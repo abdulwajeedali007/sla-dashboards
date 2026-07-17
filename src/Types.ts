@@ -1,5 +1,5 @@
-import type { Node } from '@xyflow/react';
-import type { ComponentType, CSSProperties } from 'react';
+// import type { Node } from '@xyflow/react';
+// import type { ComponentType, CSSProperties } from 'react';
 
 export type Task = {
   id: number;
