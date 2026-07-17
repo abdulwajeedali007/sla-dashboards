@@ -8,7 +8,7 @@ import ClusterOverviewPage from './Pages/ClusterOverviewPage/Index';
 import TaskWiseDetailsPage from './Pages/TaskWiseDetailsPage/Index';
 import DepartmentWiseSLAPage from './Pages/DepartmentWiseSLAPage/Index';
 import OverallDepartmentWiseSLAPage from './Pages/OverallDepartmentWiseSLAPage/Index';
-import ControlRoomPage from './Pages/ControlRoomPage/Index';
+// import ControlRoomPage from './Pages/ControlRoomPage/Index';
 
 function App() {
   return (
@@ -35,7 +35,7 @@ function App() {
 
       {/* Full Width Pages */}
       <Route element={<FullWidthLayout />}>
-        <Route path="/control-room" element={<ControlRoomPage />} />
+        {/* <Route path="/control-room" element={<ControlRoomPage />} /> */}
         <Route
           path="/task-wise-details/:id"
           element={<TaskWiseDetailsPage />}
@@ -45,7 +45,7 @@ function App() {
       {/* Default Route */}
       <Route
         path="*"
-        element={<Navigate to="/cluster-launch-calender" replace />}
+        element={<Navigate to="/cluster-launch-calendar" replace />}
       />
     </Routes>
   );

@@ -5,6 +5,7 @@ import {
   MenuIcon,
   // MenuIcon,
   Table,
+  Workflow,
   // Workflow,
   X,
 } from 'lucide-react';
