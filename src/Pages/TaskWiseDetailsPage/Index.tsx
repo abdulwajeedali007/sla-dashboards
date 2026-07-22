@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { LayoutList, Workflow } from 'lucide-react';
-import {useParmas} from 'react-router-dom'
+import { useParams, Link } from "react-router-dom";
 import WorkFlow from '../../components/WorkFlow/Index';
 import TaskWiseDetails from '../../components/TaskWiseDetails/Index';
 

@@ -19,7 +19,7 @@ import { departmentWiseSLADetalis } from '../../utils';
 import { useEffect } from 'react';
 import { fetchdepartmentwisedetails } from '../../store/DepartmentWiseSLASlice';
 import { fetchProjectDetails } from '../../store/ProjectDetailsSlice';
-import {useParams} from 'react-router-dom'
+import { useParams } from "react-router-dom";
 function Index() {
   const dispatch = useDispatch<AppDispatch>();
 
