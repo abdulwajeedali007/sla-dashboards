@@ -98,14 +98,14 @@ function BaseLayout({ children }: { children: React.ReactNode }) {
             <BarChart3 size={30} strokeWidth={1} />
             <p>Task Wise Details</p>
           </NavLink> */}
-          <NavLink
+          {/* <NavLink
             to="/department-wise-sla"
             className={navClass}
             onClick={() => setShow(false)}
           >
             <ListOrderedIcon size={30} strokeWidth={1} />
             <p>Department Wise SLA</p>
-          </NavLink>
+          </NavLink> */}
           <NavLink
             to="/overall-department-wise-sla"
             className={navClass}

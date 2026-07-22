@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { LayoutList, Workflow } from 'lucide-react';
-
+import {useParmas} from 'react-router-dom'
 import WorkFlow from '../../components/WorkFlow/Index';
 import TaskWiseDetails from '../../components/TaskWiseDetails/Index';
 
@@ -10,7 +10,7 @@ function Index() {
   function handleShowTab(value: string) {
     setShowTab(value);
   }
-
+const {id} = useParams();
   return (
     <div className="my-9">
       <div className="flex mb-6 bg-white lg:w-120   p-1 rounded-[16px]">
@@ -38,6 +38,7 @@ function Index() {
           <WorkFlow />
         </>
       )}
+      <Link className="p-2" to={`/department-wise-sla/${id}`}>To know more about the department-wise SLA Report</Link>
     </div>
   );
 }

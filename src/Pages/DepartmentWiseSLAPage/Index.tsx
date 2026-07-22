@@ -19,7 +19,7 @@ import { departmentWiseSLADetalis } from '../../utils';
 import { useEffect } from 'react';
 import { fetchdepartmentwisedetails } from '../../store/DepartmentWiseSLASlice';
 import { fetchProjectDetails } from '../../store/ProjectDetailsSlice';
-
+import {useParams} from 'react-router-dom'
 function Index() {
   const dispatch = useDispatch<AppDispatch>();
 
@@ -30,13 +30,13 @@ function Index() {
   const { data: drilldownDetails, loading: load } = useSelector(
     (state: RootState) => state.departmentwiseSlaDrilldown,
   );
-
+ const {id} = useParams()
   const { overallResultStatus, departmentWiseTableData } =
     departmentWiseSLADetalis(data ?? []);
 
   useEffect(() => {
-    dispatch(fetchdepartmentwisedetails('SLT-1672'));
-    dispatch(fetchProjectDetails(''));
+    dispatch(fetchdepartmentwisedetails(id));
+    dispatch(fetchProjectDetails(id));
   }, []);
 
   if (loading) {

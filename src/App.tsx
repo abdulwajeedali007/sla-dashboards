@@ -23,7 +23,7 @@ function App() {
         <Route path="/cluster-overview" element={<ClusterOverviewPage />} />
 
         <Route
-          path="/department-wise-sla"
+          path="/department-wise-sla/:id"
           element={<DepartmentWiseSLAPage />}
         />
 
