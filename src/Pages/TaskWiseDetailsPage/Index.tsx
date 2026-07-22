@@ -39,7 +39,7 @@ const {id} = useParams();
         </>
       )}
      <p>   
-      <Link className="p-2 mr-1 text-blue-500 underline" to={`/department-wise-sla/${id}`}>Clikc here</Link>
+      <Link className="p-2 mr-1 text-blue-700 underline" to={`/department-wise-sla/${id}`}>Click here</Link>
       to know more about the department-wise SLA Report
       </p> 
     </div>
