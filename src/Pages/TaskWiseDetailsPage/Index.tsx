@@ -38,7 +38,10 @@ const {id} = useParams();
           <WorkFlow />
         </>
       )}
-      <Link className="p-2" to={`/department-wise-sla/${id}`}>To know more about the department-wise SLA Report</Link>
+     <p>   
+      <Link className="p-2 mr-1 text-blue-500 underline" to={`/department-wise-sla/${id}`}>Clikc here</Link>
+      to know more about the department-wise SLA Report
+      </p> 
     </div>
   );
 }
