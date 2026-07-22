@@ -35,8 +35,10 @@ function Index() {
     departmentWiseSLADetalis(data ?? []);
 
   useEffect(() => {
-    dispatch(fetchdepartmentwisedetails(id));
+    if(id){
+      dispatch(fetchdepartmentwisedetails(id));
     dispatch(fetchProjectDetails(id));
+    }
   }, []);
 
   if (loading) {
