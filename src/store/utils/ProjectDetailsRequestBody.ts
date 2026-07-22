@@ -27,7 +27,7 @@ export const ProjectDetailsRequestBody = (id: string) => {
       ],
     },
     dataViewParameters: {
-      CaseID: 'SLT-1806',
+      CaseID: id,
     },
     useExtendedTimeout: true,
     includeTotalCount: true,

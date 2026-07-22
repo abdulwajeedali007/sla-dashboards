@@ -60,7 +60,7 @@ export const SLATaskDetailsRequestBody = (id: string) => {
       ],
     },
     dataViewParameters: {
-      CaseID: 'SLT-1806',
+      CaseID: id,
     },
     useExtendedTimeout: true,
     includeTotalCount: true,

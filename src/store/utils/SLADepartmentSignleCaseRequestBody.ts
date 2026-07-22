@@ -27,7 +27,7 @@ export const SLADepartmentSingleRequestBody = (id: string) => {
       ],
     },
     dataViewParameters: {
-      CaseID: 'SLT-1199',
+      CaseID: id,
     },
     useExtendedTimeout: true,
     includeTotalCount: true,
